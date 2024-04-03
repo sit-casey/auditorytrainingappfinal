@@ -79,11 +79,13 @@ h1{
   border-radius: 0.7rem;
   font-size: 22px;
 }
+.comment_box{
+  overflow: scroll;
+}
 
 .post .postTextContainer {
   word-wrap: break-word;
   height: auto;
-  max-height: 400px;
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
@@ -92,4 +94,21 @@ h1{
 .padding {
   height: 9rem;
   width: 100%;
+}
+
+.input{
+  border-radius: 0px;
+  border-color: #44444400;
+  background-color: rgba(47, 60, 85, 0.045);
+  height: 30px;
+  margin-top: 20px;
+}
+
+.replyButton{
+  height: 30px;
+  width: 50px;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  float: right;  
 }

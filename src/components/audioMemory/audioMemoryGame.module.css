@@ -1,10 +1,10 @@
 button {
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 24px;
   border-style: none;
-  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   box-sizing: border-box;
   color: #3c4043;
   cursor: pointer;
@@ -44,11 +44,12 @@ button:active {
 
 button:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 0px solid #4285f4;
 }
 
 button:not(:disabled) {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  color: #3c4043 !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 button:not(:disabled):hover {
@@ -67,7 +68,31 @@ button:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
+.buttonsContainer {
+  display: flex; /* Align buttons horizontally */
+  justify-content: center; /* Center buttons in the container */
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px; /* Adjust spacing from the elements above */
+  margin-right: 115px;
+}
+
+.sequenceDisplay {
+  margin-top: 20px; /* Space between the buttons and the sequence text */
+  width: 100%; /* Use the full width of the container */
+  flex-wrap: wrap; /* Allow sequence items to wrap */
+  justify-content: center; /* Center items horizontally */
+  gap: 10px; /* Space between sequence items */
+}
+.sequenceDisplayContainer.visible {
+  height: auto; /* Expand to fit content */
+  padding: 10px 0; /* Add some vertical padding when visible */
+}
+.sequenceItem {
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  margin-right: 5px;
+}
 .gameContainer {
+  background-color: #ffffff;
   font-family: "Google Sans",Roboto,Arial,sans-serif;
   text-align: center;
   margin: 0;
@@ -92,8 +117,8 @@ button:disabled {
   font-family: "Google Sans",Roboto,Arial,sans-serif;
   position: absolute; /* Make title position absolute */
   top: 20px; /* Position it at the top of the container */
-  left: 40px; /* Adjust based on your layout preference */
-  width: calc(100% - 80px); /* Adjust width to respect padding */
+  left: 40px; 
+  width: calc(100% - 80px); 
   font-size: 32px;
   margin-bottom: 10px; /* Reduce or remove margin-bottom as it's now absolutely positioned */
   z-index: 10; /* Ensure it's above other content */
@@ -102,10 +127,12 @@ button:disabled {
   position: absolute;
   top: 50px;
   font-size: 28px; /* Increase font size for better visibility */
-  margin-top: 20px; /* Adjust spacing as needed */
+  margin-top: 20px; 
   width: 100%;
 }
 .wordsContainer {
+  margin-top: 0px !important;
+  margin-left: 25px;
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Creates five columns */
   grid-template-rows: repeat(2, 1fr); /* Creates two rows */
@@ -139,7 +166,11 @@ button:disabled {
   margin-left: 0px;
 }
 
-
+.replayButtonContainer {
+  display: flex;
+  margin-top: 100px; 
+  margin-right: 100px;
+}
 .progressContainer {
   width: 100%;
   background-color: #f0f0f0;

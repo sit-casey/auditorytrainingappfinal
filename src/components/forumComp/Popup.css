@@ -21,13 +21,16 @@
     border-radius: 1.5rem;
 }
 
-.popup-inner .close-btn {
+.close-btn {
     position: absolute;
+    border-radius: 20px;
     bottom: 3rem;
     right: 8%;
     height: 10%;
-    width: 15%;
+    width: 12%;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
+    color: red;
+    
 }

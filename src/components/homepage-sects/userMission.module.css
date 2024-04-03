@@ -1,26 +1,68 @@
 .mission__cards {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 115rem;
+  flex-wrap: wrap;
+  justify-content: center; /* Centering cards in the container */
+  align-items: flex-start; /* Aligning items to start */
+  max-height: 300px;
+  margin-bottom: 20px;
+
+}
+.card{
+  margin-top: 100px !important;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 131rem;
+  min-height: 35rem;
+  padding: 0 3rem;
   margin: 0 auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: rgba(253, 253, 253, 0.206);
+  backdrop-filter: blur(80px);
+  border-radius: 10px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+
 }
 
 .mission__card {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.3s;
+  border-radius: 20px;
+  width: 300px; /* Adjust based on your preference */
+  margin: 20px; /* Spacing between cards */
+  height: 300px;
+  margin-right: 65px;
+  text-align: center; /* Centering content inside the card */
 }
 
 .mission__card__info {
-  padding: 0 10rem;
-  width: 50%;
+  margin: 20px; /* Spacing between cards */
+  font-size: 30px;
 }
 .mission__card__img {
-  width: 50%;
+  width: 100px; /* Adjust based on your preference */
+  height: 100px; /* Adjust based on your preference */
+  margin-bottom: 30px;
+  margin-right: 25px;
 }
 
 .row__reverse {
   flex-direction: row-reverse;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.missionCardEnter {
+  animation: slideInFromLeft 0.5s ease-out forwards;
 }

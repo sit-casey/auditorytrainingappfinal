@@ -23,8 +23,7 @@ function Games(props) {
     <div className={classes.acts__container}>
       <h3>All Games</h3>
       <div className={classes.acts__title}>
-      {/* Ling Activity is passed here as props.title. */}
-        <h2>{props.title}</h2> 
+      
       </div>
 
       <div className={classes.display}>

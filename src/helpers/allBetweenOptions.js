@@ -5,14 +5,14 @@ const allBetweenOptions = {
     {
       title: "Drill Activities",
       link: "/activity",
-      src: "ear",
+      src: "extracurricular-activities",
       desc: "Repeated drills to help you sharpen your listening skills"
     },
     {
-      title: "Game Activities",
+      title: "Games",
       link: "/activity/gameActivities",
-      src: "ear",
-      desc: "Fun activities to help you sharpen your listening skills"
+      src: "interactive",
+      desc: "Fun mini-games to help you sharpen your listening skills"
     },
   ],
 };

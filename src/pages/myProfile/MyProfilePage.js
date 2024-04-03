@@ -154,7 +154,10 @@ function MyProfilePage() {
 
     window.location.reload(); //force reload
   };
-
+// Function to toggle edit mode and expansion
+const toggleEdit = () => {
+  setEditProfile(!editProfile);
+};
   //Display
   return (
     <>
@@ -170,6 +173,7 @@ function MyProfilePage() {
               <img
                 className={classes.img_container}
                 src={userData.profilePic}
+                alt = "Profile_Picture"
               />
               {/* Show user's full name and location if hidden flag not triggered */}
              <div
@@ -199,6 +203,13 @@ function MyProfilePage() {
             </div>
             {/* Check if edit profile is not triggered. Show Abouts */}
             <div className={classes.aboutMe_container}>
+              <div className={`main_container ${editProfile ? 'expanded' : ''}`}>
+                {!editProfile && (
+                  <button onClick={toggleEdit} className={classes.profile_buttons}>
+                  {editProfile ? 'Cancel' : 'Edit Profile'}
+                </button>
+                )}
+                </div>
               {!editProfile && (
                 <div>
                   <h5>About Me:</h5>
@@ -210,10 +221,10 @@ function MyProfilePage() {
                   </p>
                 </div>
               )}
-
+              
               {/* Edit profile flag triggered */}
               {editProfile && (
-                <div>
+                <div className={classes.editProfileContainer}>
                   {/* Profile picture upload */}
                   <h5>Upload Profile Picture:</h5>
                   <input
@@ -305,36 +316,40 @@ function MyProfilePage() {
                   <br></br>
 
                   {/* Hide flags */}
-                  <input
-                    type="checkbox"
-                    id="hideLocation"
-                    defaultChecked={userData.privateLocation}
-                    onChange={(e) => setHideLocation(e.target.checked)}
-                  />
-                  <label for="hideLocation" className={classes.checkbox_label}>
-                    {" "}
-                    Hide Location
-                  </label>
-                  <input
-                    type="checkbox"
-                    id="hideAge"
-                    defaultChecked={userData.privateAge}
-                    onChange={(e) => setHideAge(e.target.checked)}
-                  />
-                  <label for="hideAge" className={classes.checkbox_label}>
-                    {" "}
-                    Hide Age
-                  </label>
-                  <input
-                    type="checkbox"
-                    id="hidePronouns"
-                    defaultChecked={userData.privatePronouns}
-                    onChange={(e) => setHidePronouns(e.target.checked)}
-                  />
-                  <label for="hidePronouns" className={classes.checkbox_label}>
-                    {" "}
-                    Hide Pronouns
-                  </label>
+                  <div className={classes.check_box_container}>
+                    <input
+                      type="checkbox"
+                      id="hideLocation"
+                      defaultChecked={userData.privateLocation}
+                      onChange={(e) => setHideLocation(e.target.checked)}
+                    />
+                    <label for="hideLocation" className={classes.checkbox_label}>
+                      {" "}
+                      Hide Location
+                    </label>
+                    <input
+                      type="checkbox"
+                      id="hideAge"
+                      defaultChecked={userData.privateAge}
+                      onChange={(e) => setHideAge(e.target.checked)}
+                    />
+                    <label for="hideAge" className={classes.checkbox_label}>
+                      {" "}
+                      Hide Age
+                    </label>
+                    <input
+                      type="checkbox"
+                      id="hidePronouns"
+                      defaultChecked={userData.privatePronouns}
+                      onChange={(e) => setHidePronouns(e.target.checked)}
+                    />
+                    <label for="hidePronouns" className={classes.checkbox_label}>
+                      {" "}
+                      Hide Pronouns
+                    </label>
+
+                  </div>
+                  
                 </div>
               )}
             </div>
@@ -342,20 +357,13 @@ function MyProfilePage() {
         )}
 
         {/* Buttons at the bottom of screen */}
-        {!editProfile && (
-          <button
-            onClick={() => setEditProfile(true)}
-            className={classes.profile_buttons}
-          >
-            Edit Profile
-          </button>
-        )}
-
+        
         {/* Buttons if editProfile is active */}
         {editProfile && (
           <div>
             <button
               onClick={() => updateInfo()}
+          
               className={classes.save_button}
             >
               Save

@@ -6,6 +6,7 @@ import {
     Navigate,
 } from "react-router-dom";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from "./pages/homePage/HomePage";
 import AuthPage from "./pages/auth/AuthPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
@@ -19,6 +20,7 @@ import LingMatchingPage3 from "./pages/ling/LingMatchingPage3";
 import LingMatchingPage4 from "./pages/ling/LingMatchingPage4";
 import CrossWord from "./components/crossWord/CrossWord";
 import CrossWord2 from "./components/crossWord2/CrossWord2";
+import LingComprehension from "./components/lingComprehension/LingComprehension";
 import LingDetectionPageGame2 from "./pages/ling/LingDetectionPageGame2";
 import LingDiscriminationPage from "./pages/ling/LingDiscriminationPage";
 import LingDiscriminationPageGame2 from "./pages/ling/LingDiscriminationPageGame2";
@@ -31,6 +33,7 @@ import GamePageMatching from "./pages/gamePage/GamePageMatching";
 import GamePageCrossWords from "./pages/gamePage/GamePageCrossWords";
 import GamePageDiscrimination from "./pages/gamePage/GamePageDiscrimination";
 import GamePageIdentification from "./pages/gamePage/GamePageIdentification";
+import GamePageComprehesion from "./pages/gamePage/GamePageComprehesion";
 import GamePageAudioMemory from "./pages/gamePage/GamePageAudioMemory"; 
 import DetectionForum from "./pages/forum/DetectionForum";
 import MyProfilePage from "./pages/myProfile/MyProfilePage";
@@ -39,8 +42,11 @@ import Settings from "./pages/settings/Settings";
 import SupportPage from "./pages/supportPage/SupportPage";
 import InBetweenPage from "./pages/inBetweenPage/inBetweenPage";
 import VoiceSelectorPage from "./pages/voiceSelectorPage/voiceSelectorPage";
-import LingAudioMemoryPage from "./pages/ling/LingAudioMemoryPage";
 import AudioMemory from "./components/audioMemory/AudioMemory";
+import AudioMemoryLvl2 from "./components/audioMemoryLvl2/AudioMemorylvl2";
+import AudioMemoryLvl3 from "./components/audioMemoryLvl3/AudioMemorylvl3";
+import AudioMemoryLvl4 from "./components/audioMemoryLvl4/AudioMemorylvl4";
+
 export const ThemeContext = createContext(null);
 
 function App() {
@@ -142,6 +148,16 @@ function App() {
                                 )
                             }
                         />
+                         <Route
+                            path="/activity/comprehension"
+                            element={
+                                authContext.isLoggedIn ? (
+                                    <GamePageComprehesion />
+                                ) : (
+                                    <Navigate to="/auth" />
+                                )
+                            }
+                        />
                          
             <Route
               path="/activity/gameActivities/matching"
@@ -172,6 +188,46 @@ function App() {
                         <Navigate to="/auth"  />
                     )
                 }
+            />
+            <Route
+                path="/gameActivity/audioMemorylvl2"
+                element={
+                authContext.isLoggedIn ? (
+                    <AudioMemoryLvl2 /> 
+                    )   :  ( 
+                        <Navigate to="/auth"  />
+                    )
+                }
+            />
+            <Route
+                path="/gameActivity/audioMemorylvl3"
+                element={
+                authContext.isLoggedIn ? (
+                    <AudioMemoryLvl3 /> 
+                    )   :  ( 
+                        <Navigate to="/auth"  />
+                    )
+                }
+            />
+            <Route
+                path="/gameActivity/audioMemorylvl4"
+                element={
+                authContext.isLoggedIn ? (
+                    <AudioMemoryLvl4 /> 
+                    )   :  ( 
+                        <Navigate to="/auth"  />
+                    )
+                }
+            />
+             <Route
+              path="/lingActivity/comprehensionlvl1"
+              element={
+                authContext.isLoggedIn ? (
+                  <LingComprehension />
+                ) : (
+                  <Navigate to="/auth" />
+                )
+              }
             />
             <Route
               path="/lingActivity/matchinglvl1"

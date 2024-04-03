@@ -5,27 +5,16 @@ const allCrossWordsGames = {
       {
         title: "WordSearch: Level 1",
         link: "/lingActivity/crosswordslvl1",
-        src: "WordSearchIcon",
+        src: "number-1-green",
         desc: "Find the words in the WordSearch puzzle using sounds!"
       },
       {
         title: "WordSearch: Level 2",
         link: "/lingActivity/crosswordslvl2",
-        src: "WordSearchIcon",
+        src: "number-two-yellow",
         desc: "Find the words in the WordSearch puzzle using sounds!"
       },
-      {
-        title: "WordSearch: Level 3",
-        link: "/lingActivity/crosswordslvl3",
-        src: "WordSearchIcon",
-        desc: "Coming Soon!"
-      },
-      {
-        title: "WordSearch: Level 4",
-        link: "/lingActivity/crosswordslvl4",
-        src: "WordSearchIcon",
-        desc: "Coming Soon!"
-      },
+      
     ],
   };
   

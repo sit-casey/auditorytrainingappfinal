@@ -1,0 +1,262 @@
+button {
+  align-items: center;
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+button:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+button:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+  border: 0px solid #4285f4;
+}
+
+button:not(:disabled) {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+button:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+button:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+button:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+button:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.buttonsContainer {
+  display: flex; /* Align buttons horizontally */
+  justify-content: center; /* Center buttons in the container */
+  gap: 20px; /* Space between buttons */
+  margin-top: 200px; /* Adjust spacing from the elements above */
+  margin-right: 115px;
+}
+
+.sequenceDisplay {
+  margin-top: 20px; /* Space between the buttons and the sequence text */
+  width: 100%; /* Use the full width of the container */
+  flex-wrap: wrap; /* Allow sequence items to wrap */
+  justify-content: center; /* Center items horizontally */
+  gap: 10px; /* Space between sequence items */
+}
+.sequenceDisplayContainer.visible {
+  height: auto; /* Expand to fit content */
+  padding: 10px 0; /* Add some vertical padding when visible */
+}
+.sequenceItem {
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  margin-right: 5px;
+}
+.gameContainer {
+  background-color: #ffffff;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; /* Fixed width */
+  height: 600px; /* Fixed height */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-sizing: border-box; /* Include padding and border in the container's dimensions */
+  padding: 40px; /* Added padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.title {
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  position: absolute; /* Make title position absolute */
+  top: 20px; /* Position it at the top of the container */
+  left: 40px; 
+  width: calc(100% - 80px); 
+  font-size: 32px;
+  margin-bottom: 10px; /* Reduce or remove margin-bottom as it's now absolutely positioned */
+  z-index: 10; /* Ensure it's above other content */
+}
+.scoreContainer {
+  position: absolute;
+  top: 50px;
+  font-size: 28px; /* Increase font size for better visibility */
+  margin-top: 20px; 
+  width: 100%;
+}
+.wordsContainer {
+  margin-top: 0px !important;
+  margin-left: 100px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Creates five columns */
+  grid-template-rows: repeat(2, 1fr); /* Creates two rows */
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Ensure it occupies the full width of its parent */
+}
+.question{
+  margin-top: 250px;
+  margin-bottom: 80px;
+  font-size: 24px;
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+
+
+}
+.startButtonContainer {
+  width: 100%; /* This ensures the container spans the full width */
+  display: flex;
+  justify-content: center;
+  margin-right: 90px;
+  
+}
+.questionContainer {
+  width: 100%; /* Adjust based on your layout */
+  margin-top: 100px; /* Adjust so the question appears below the score. Change value based on actual layout */
+  font-size: 24px; /* Example font size */
+  margin-bottom: 300px;
+}
+.wordButton { /* Apply the same style to startButton and wordButton */
+  width: 100px; /* Same width and height for a square button */
+  height: 100px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase; /* Capitalize button text */
+  transition: background-color 0.3s; /* Smooth transition for color change */
+  margin-bottom: 10px; /* Space between the start button and the grid */
+  margin-left: 0px;
+}
+
+.replayButtonContainer {
+  display: flex;
+  margin-top: 100px; 
+  margin-right: 100px;
+}
+.progressContainer {
+  margin-top: 20px;
+  width: 50%;
+  margin-left: 170px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.progressBar {
+  height: 20px;
+  background-color: rgb(118, 184, 82);
+  box-shadow:rgba(118, 184, 82) 0px 2px 5px -1px, rgba(118, 184, 82) 0px 1px 3px -1px; 
+  border-radius: 20px;
+  width: 0; /* Initial state */
+  transition: width 0.3s ease;
+}
+
+.completedMessage {
+  font-size: 18px;
+  margin-top: 20px;
+  
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .wordsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .wordButton {
+    width: 80%; /* Adjust size for smaller screens */
+    height: auto;
+    padding: 20px;
+  }
+}
+
+.startButton {
+  width: auto; /* Adjust size for smaller screens */
+  height: auto;
+  padding: 20px;
+  align-items: center;
+  cursor: pointer;
+  align-items: center !important;
+  justify-content: center;
+  text-transform: uppercase; /* Capitalize button text */
+  margin-bottom: 20px;
+  align-self: center !important;
+  margin-right: 90px;
+  margin-right: 0;
+}

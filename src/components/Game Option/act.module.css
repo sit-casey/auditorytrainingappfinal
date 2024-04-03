@@ -1,19 +1,21 @@
 .activity__container {
+  margin: 10px;
   display: flex;
-  height: 30rem;
-  width: 30rem;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   color: #444;
-  padding-top: 2em;
-  padding-left: 2em;
+  padding: 2em;
   border-radius: 12px;
-  position: relative;
-  margin-left: 14rem;
+  background-color: #fff;
+  width: 300px; /* Adjust based on your layout needs */
+  height: 300px; /* Adjust based on your layout needs */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
 
 .activity__container:hover {
-  cursor: pointer;
-  /* border-bottom: 1px rgba(68, 68, 68, 0.292) solid; */
   transform: translateY(-3px);
 }
 
@@ -22,62 +24,77 @@
 .col_2,
 .col_3,
 .info {
-  display: inline-block;
-}
-
-.col_1_img {
-  height: 50%;
-  width: auto;
-  border-radius: 12px;
-  padding: 10px;
-  background-color: #94C773;
-  text-align: center;
-  margin-right: 40px;
-}
-
-.info {
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: 5px;
-  /* background-color: aqua; */
-}
-
-.main__info,
-.sub__info {
-  font-size: 2.25rem;
-}
-.sub__info {
-  text-align: left;
-}
-
-
-.col_2 {
-  width: 10rem;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.col_2_1 {
-  height: 5rem;
-  width: auto;
-}
-
-.col_3 {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.main__info,
-.col_3_1 {
-  font-weight: 600;
+.col_1_img {
+ 
+  max-width: 100px; /* Adjust size to your preference */
+  max-height: 125px;
+  border-radius: 12px;
+  margin-top: 15px;
+  margin-bottom: 10px; /* Space between image and text */
+  margin-right: 30px;
 }
 
-.col_3_2 {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  background-color: blue;
+.info {
+  text-align: center !important;
+}
 
+.main__info, .sub__info {
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  display: block; /* Ensure these are treated as block-level for proper spacing */
+}
+
+.main__info {
+  display: flex;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 0.5rem; /* Space between title and description */
+}
+
+.sub__info {
+  font-size: 14px; /* Adjust based on your preference */
+}
+
+.col_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.col_2_1 {
+  height: auto;
+  width: 100%;
+}
+
+.col_3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.col_3_1, .col_3_2 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding: 0 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .activity__container {
+    width: 90%;
+    height: auto;
+    padding: 1em;
+  }
+
+  /* Adjust the sizes or layout for mobile responsiveness if necessary */
 }

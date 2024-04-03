@@ -1,172 +1,128 @@
+/* General styles to normalize appearances */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+/* Main container for user data */
 .main_container {
+  background-color: #ffffff;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
   text-align: center;
+  margin: 0;
   position: absolute;
-  top: 465px;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
-  display: flex;
-  overflow: hidden;
-  padding-bottom: 300px;
+  width: 800px; /* Fixed width */
+  height: 850px; /* Fixed height */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 40px; /* Added padding */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+ 
 }
 
 .profile_container {
   text-align: center;
-  width: 40%;
-  float: left;
-  background: rgba(var(--dark-blue));
-  color: #ffffff;
-  padding: 2rem 0 2rem 1.5rem;
-  box-sizing: border-box;
-  border-top-left-radius: 3rem;
-  border-bottom-left-radius: 3rem;
-  height: 54rem;
-  margin-top: 150px;
-}
-
-.aboutMe_container {
-  text-align: left;
-  flex: 1;
-  position: relative;
-  background: #c4d4e6;
-  padding: 3rem;
-  box-sizing: border-box;
-  border-top-right-radius: 3rem;
-  border-bottom-right-radius: 3rem;
-  overflow-y: auto;
-  height: 54rem;
-  margin-top: 150px;
+  margin-bottom: 20px;
 }
 
 .img_container {
-  height: 30rem;
-  width: 30rem;
-  border-radius: 3rem;
-  overflow: hidden;
-  border-style: solid;
-  border-width: 0.7rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #007bff;
+  margin-bottom: 20px;
+  justify-content: center;
+  margin-right: 20px;
+
+}
+
+.user_name {
+  margin-bottom: -5px;
 }
 
 .user_subinfo {
-  font-size: large;
+  color: #666;
+  margin-bottom: 10px;
 }
 
-.profile_buttons {
-  position: absolute;
-  height: 5rem;
-  width: 15rem;
-  top: 56rem;
-  left: 50%;
-  font-size: 1.7rem;
-  border-radius: 2rem;
-  background: rgba(var(--dark-blue));
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
+.aboutMe_container {
+  margin-top: 0px;
 }
 
-.profile_buttons:active {
-  background: #4b6791;
-}
-
-.edit_panel {
-  position: fixed;
-  left: 50%;
-  top: 30%;
-  border-radius: 3rem;
-  background-color: #ffffff;
-  text-align: left;
-  padding: 1.5rem;
-  overflow-y: auto;
-  height: 48rem;
-}
-
-input:valid.choose_file {
-  border: none;
-}
-
-.choose_file {
-  height: 5rem;
-  width: 30rem;
-  top: 45rem;
-  font-size: 1.7rem;
-  border: none;
-  cursor: pointer;
-  padding: 1rem 1rem 1rem 0rem;
-}
-
-.text_box {
-  height: 10rem;
+/* Textareas and inputs for editing */
+.text_box, .date_select, .drop_down, .choose_file {
   width: 100%;
-  font-size: 1.7rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 2rem;
-  border: none;
-  padding: 1rem;
-  resize: none;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
-
-.save_button {
-  position: absolute;
-  height: 5rem;
-  width: 12rem;
-  top: 56rem;
-  left: 44%;
-  font-size: 1.7rem;
-  border-radius: 2rem;
-  background-color: #6e7c68;
-  color: #ffffff;
+.drop_down{
+  height: 30px;
+}
+/* Buttons styling */
+.save_button, .cancel_button, .upload_button {
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-}
-
-.cancel_button {
-  position: absolute;
-  height: 5rem;
-  width: 12rem;
-  top: 56rem;
-  left: 56%;
-  font-size: 1.7rem;
-  border-radius: 2rem;
-  background-color: #7c6868;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-}
-
-.date_select {
-  width: 30%;
-  height: 3rem;
-  font-size: 1.7rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.drop_down {
-  width: 30%;
-  height: 3rem;
-  font-size: 1.7rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-right: 0px;
 }
 
 .upload_button {
-  height: 4rem;
-  width: 15rem;
-  font-size: 1.7rem;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 2rem;
+  background-color: #007bff;
+  color: #ffffff;
+  justify-content: center !important;
+}
+.profile_buttons{
+  justify-content:end;
+  align-self: basline;
+  margin-right: 90px !important;
+  margin-bottom: 20px;
+}
+.save_button {
+  color: #ffffff;
 }
 
-.upload_msg {
-  margin-bottom: 1rem;
+.cancel_button {
+  color: #ffffff;
 }
 
+/* Checkbox labels */
 .checkbox_label {
-  font-size: 1.7rem;
-  margin-right: 2rem;
-  font-weight: bold;
+  flex-direction: column;
+  margin: 15px;
+  font-size: 14px;
+  
+}
+.check_box_container{
+  display: inline-flex !important;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main_container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .profile_buttons, .save_button, .cancel_button, .upload_button {
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 0;
+    justify-content: center;
+  }
 }

@@ -25,7 +25,7 @@ function NavProfile() {
             <div className={classes.img__container}>
               <img
                 className={classes.profile__img}
-                src={require("../../assets/images/test-founder.jpg")}
+                src={require("../../assets/images/user (1).png")}
                 alt="profile"
               />
             </div>

@@ -1,17 +1,22 @@
 .card {
+  margin: 2rem auto;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
+  align-items: center !important;
+  align-self: center !important;
+  align-content: center !important;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  color: #444;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #fff;
+  width: 300px; /* Adjust based on your layout needs */
+  height: 300px; /* Adjust based on your layout needs */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  margin: 10px; 
   justify-content: center;
-  height: 15rem;
-  width: 20rem;
-  margin: 0 3rem;
-  padding: 1rem;
-  color: black;
-  background-color: #94C773;
-  border-radius: 4rem;
-  padding-top: 10px;
-  text-align: center;
-  
 }
 
 .card:hover {
@@ -19,15 +24,19 @@
 }
 
 .card__img {
-  width: 3.5rem;
-  height: auto;
-  margin-left: 75px;
+  max-width: 65%;
+  max-height: 65%;
+  border-radius: 12px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-right: 30px;
 
 }
 
 .card__upper {
   display: flex;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   flex-direction: column;
   justify-content: space-around;
   height: 8rem;
@@ -37,6 +46,7 @@
 .card__upper span:first-child,
 .card__lower span:last-child {
   font-weight: 600;
+  text-align: center !important;
 }
 
 .card__lower {

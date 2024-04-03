@@ -56,10 +56,11 @@ useEffect(() => {
   //Set up images depending on the link associated with the card
   const imgSetter = () => {
     console.log("props.link:", props.link);
-    if (props.link === "/activity/detection") return "detection";
-    if (props.link === "/activity/identification") return "identification";
-    if (props.link === "/activity/discrimination") return "discrimination";
-    if (props.link === "/activity/gameActivities/matching") return "detection";
+    if (props.link === "/activity/detection") return "audition";
+    if (props.link === "/activity/identification") return "extracurricular-activities";
+    if (props.link === "/activity/discrimination") return "scale";
+    if (props.link === "/activity/comprehension") return "human-mind";
+    if (props.link === "/activity/gameActivities/matching") return "card-game";
     return "notes";
   };
 
@@ -90,7 +91,7 @@ useEffect(() => {
             {/* Display high score */}
             <div className={classes.card__lower}>
               <span>High Score:</span>
-              <span>{allScores[0] ? `${Math.max(...allScores)}%` : "0%"}</span>
+              <span>{allScores[0] ? `${Math.max(...allScores)}%` : " 0%"}</span>
             </div>
           </div>
         </Link>
