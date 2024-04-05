@@ -260,3 +260,8 @@ button:disabled {
   margin-right: 90px;
   margin-right: 0;
 }
+
+.wrongAnswer {
+  background-color: red;
+  color: white; /* Change text color to improve readability */
+}

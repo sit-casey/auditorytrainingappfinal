@@ -19,28 +19,25 @@ h1{
 .add_post_btn {
   height: 3rem;
   width: 13rem;
-  top: 8rem;
-  right: 60rem;
+  margin-bottom: 20px;
   font-size: 1.7rem;
   border-radius: 0.5rem;
-  background: rgba(var(--dark-blue));
   color: #ffffff;
   border: none;
   cursor: pointer;
   padding: 0.5rem 1rem !important;
-  position: fixed;
-  z-index: 20000;
 }
 .add_post_btn:active {
   background: #4b6791;
 }
 .btn_container {
+  height: 500px;
   top: 10%;
   margin-left: 80%;
 }
 
 .btn_container h3{
-  margin-left: 170px;
+  text-align: center;
   padding-bottom: 10px;
 }
 

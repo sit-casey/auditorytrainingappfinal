@@ -81,7 +81,8 @@ function QuizGame() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [gameState, setGameState] = useState('idle'); // 'idle', 'playing', 'completed'
-
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
   // Handle the start of the game and reset conditions
   const handleStartGame = () => {
     setScore(0);
@@ -91,17 +92,24 @@ function QuizGame() {
   };
 
   // Handle answer selection
-  const handleAnswer = (option) => {
-    if (option === questions[currentQuestionIndex].answer) {
+  const handleAnswer = (option, index) => {
+    setSelectedOption(index);
+    const isCorrect = option === questions[currentQuestionIndex].answer;
+    setIsAnswerCorrect(isCorrect);
+  
+    if (isCorrect) {
       setScore(score + 1);
     }
-
-    // Update the question index and let useEffect handle playing the new audio
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    } else {
-      setGameState('completed');
-    }
+  
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setSelectedOption(null); // Reset for the next question
+        setIsAnswerCorrect(null); // Reset correctness state
+      } else {
+        setGameState('completed');
+      }
+    }, 2000); // Delay to show color change before moving to the next question
   };
 
   // UseEffect to handle audio playback
@@ -148,12 +156,12 @@ function QuizGame() {
           <div className={classes.questionContainer}>
             <div className={classes.question}>
               {questions[currentQuestionIndex].question}
-            </div>
-            <div className={classes.wordsContainer}>
-              {questions[currentQuestionIndex].options.map((option, index) => (
-                <button key={index} onClick={() => handleAnswer(option)} className={classes.wordButton}>
-                  {option}
-                </button>
+              </div>
+              <div className={classes.wordsContainer}>
+                {questions[currentQuestionIndex].options.map((option, index) => (
+                  <button key={index} onClick={() => handleAnswer(option)} className={classes.wordButton}>
+                    {option}
+                  </button>
               ))}
             </div>
           </div>

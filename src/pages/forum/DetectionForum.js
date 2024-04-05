@@ -83,7 +83,6 @@ function DetectionForum() {
        
         <div style={{ paddingTop: "10rem", paddingRight: "1rem", paddingBottom: "3rem", paddingLeft: "3rem", borderRight: "3px solid black" }}>
           <h1 style={{ paddingTop: "0rem", marginBottom: "0.5rem", fontFamily: "Sans-Serif", fontWeight: "bold" }}>Forum</h1>
-          
           <div className={classes.homePage}>
           <button onClick={() => setButtonPopup(true)} className={classes.add_post_btn}>
           Add new post

@@ -1,153 +1,75 @@
-html,
 .body {
   height: 100%;
-}
-
-.body {
-  margin: 0;
   background: -webkit-linear-gradient(45deg, #49a09d, #5f2c82);
   background: linear-gradient(45deg, #49a09d, #5f2c82);
-  font-family: sans-serif;
-  font-weight: 100;
 }
-
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  max-height: 600px;
-  overflow-y: scroll;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-table {
-  width: 800px;
-  height: 800px;
-  border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(59, 138, 85, 0.1);
-}
-
-th,
-td {
-  padding: 15px;
-  background-color: rgba(114, 147, 155, 0.2);
-  color: #2d9c2d;
-}
-
-th {
-  text-align: left;
-}
-
-thead th {
-  background-color: #1d73a5;
-}
-
-tbody tr:hover {
-  background-color: rgba(14, 109, 138, 0.3);
-}
-
-tbody td {
-  position: relative;
-}
-
-tbody td:hover:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -9999px;
-  bottom: -9999px;
-  background-color: rgba(3, 78, 16, 0.2);
-  z-index: -1;
-}
-
-.padding {
-  height: 9rem;
-  width: 100%;
-}
-
-.navbar {
-  height: 4.5rem;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-  background-color: #f5efef;
-  position: fixed;
-  top: 4.5rem;
-  width: 100%;
-  font-size: 35px;
-  z-index: 1000;
-  text-align: center;
-  border-bottom-style: double;
-  border-color: rgb(11, 145, 155);
-}
-
-.header {
-  text-align: center;
-  padding-top: 5rem;
-  color: #444;
-  font-size: 22px;
-  padding-bottom: 20px;
-}
-
-.twitter-share-button {
-  font-size: 50px;
-}
-
-.headertxt {
+.commingSoon{
   text-align: center;
 }
-
-.button[type="button"] {
-  background-color: #086177;
-}
-
-.btnparent {
+.mission__cards {
+  text-align: center;
+  height: 1000px;
   display: flex;
-  margin-left: 80.5rem;
-}
+  flex-wrap: wrap;
+  justify-content: center; /* Centering cards in the container */
+  align-items: flex-start; /* Aligning items to start */
+  margin-bottom: 20px;
 
-.socialbtn {
-  padding-top: 3px;
+}
+.card{
+  margin-top: 100px !important;
+  text-align: center;
   display: flex;
-  gap: 0.1px;
-  margin-left: 28rem;
+  flex-wrap: wrap;
+  max-width: 131rem;
+  min-height: 35rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: rgba(253, 253, 253, 0.206);
+  backdrop-filter: blur(80px);
+  border-radius: 10px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+
 }
 
-/* Pagination Styles */
-.pagination {
+.mission__card {
+  text-align: center;
   display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.3s;
+  border-radius: 20px;
+  width: 300px; /* Adjust based on your preference */
+  margin: 20px; /* Spacing between cards */
+  height: 300px;
+  margin-right: 65px;
+  text-align: center; /* Centering content inside the card */
 }
 
-
-.pagination {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+.mission__card__img {
+  width: 100px; /* Adjust based on your preference */
+  height: 100px; /* Adjust based on your preference */
+  margin-bottom: 30px;
+  margin-right: 25px;
 }
 
-.pagination button {
-  margin: 0 5px;
-  cursor: pointer;
-  padding: 5px 10px;
-  background-color: #1d73a5;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+.row__reverse {
+  flex-direction: row-reverse;
 }
 
-.pagination button.active {
-  background-color: #04495a;
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.pagination button:hover {
-  background-color: #2d9c2d;
+.missionCardEnter {
+  animation: slideInFromLeft 0.5s ease-out forwards;
 }

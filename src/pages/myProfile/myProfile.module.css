@@ -80,7 +80,8 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 0px;
+  margin-left: 100px;
+  margin-right: 20px;
 }
 
 .upload_button {
@@ -108,12 +109,15 @@ body {
 
 /* Checkbox labels */
 .checkbox_label {
-  flex-direction: column;
-  margin: 15px;
-  font-size: 14px;
+  display: inline-flex;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 16px;
   
 }
 .check_box_container{
+  margin-left: 30px;
   display: inline-flex !important;
 }
 /* Responsive adjustments */
