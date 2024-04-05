@@ -17,6 +17,7 @@ import {
   RegionDropdown,
   CountryRegionData,
 } from "react-country-region-selector";
+import { Margin, Padding } from "@mui/icons-material";
 
 //Profile page
 function MyProfilePage() {
@@ -82,7 +83,7 @@ function MyProfilePage() {
 
     //Check if it's the default pfp
     if (
-      userData.profilePic !=
+      userData.profilePic !==
       "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/profilePictures%2Fdefault%2Fdefault.jpg?alt=media&token=276e66bb-1827-403b-bb6a-839d6cb9916b"
     ) {
       //Delete old msg
