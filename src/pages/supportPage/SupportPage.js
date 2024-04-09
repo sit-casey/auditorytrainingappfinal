@@ -12,7 +12,7 @@ function SupportPage() {
         <h2 className={classes.subheading}>We are 'hear' for you!</h2>
         <div className={classes.wrapper}>
         <img
-                src={require("../../assets/images/pexels-jonas-mohamadi-1490844.jpg")}
+                src={require("../../assets/images/contact-us.png")}
                 alt="Founder"
                 className={classes.card__img}
               />
@@ -21,9 +21,9 @@ function SupportPage() {
         className= {classes.support_text_input}
         >
           <form>
-            <input type="text" id="name" name="name" placeholder="Your name" />           
-            <input type="text" id="email" name="email" placeholder="Your email" />
-            <textarea id="message" name="message" placeholder="Your message"></textarea>
+            <input className={classes.form__input} type="text" id="name" name="name" placeholder="Name" />           
+            <input className={classes.form__input} type="text" id="email" name="email" placeholder="Email" />
+            <textarea className={classes.form__text} id="message" name="message" placeholder="Message"></textarea>
 
             {/*TODO: Make Button send meesage to PO's lab email*/}
             <button type="submit">Submit</button>

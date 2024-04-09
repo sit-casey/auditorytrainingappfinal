@@ -47,7 +47,7 @@ body {
   border: 1px solid #007bff;
   margin-bottom: 20px;
   justify-content: center;
-  margin-right: 20px;
+  margin-right: 33px;
 
 }
 
@@ -71,6 +71,9 @@ body {
   margin-bottom: 15px;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+.text_box{
+  min-height: 100px;
 }
 .drop_down{
   height: 30px;
@@ -110,7 +113,7 @@ body {
 /* Checkbox labels */
 .checkbox_label {
   display: inline-flex;
-  margin-top: 20px;
+  margin-top: 32px;
   margin-left: 10px;
   margin-right: 20px;
   font-size: 16px;

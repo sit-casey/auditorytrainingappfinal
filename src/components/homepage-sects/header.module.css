@@ -6,10 +6,9 @@
   flex-direction: column;
   align-items: center;
   background-image: url('../../assets/images/header.png'); 
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;  
   transition: transform 0.5s ease-out;
   min-height: 500px;
-  background-attachment: fixed;
+  background-attachment: fixed !important;
  
   
 }
@@ -50,7 +49,8 @@ h4 {
   grid-column: 2 / 3;
   grid-row: 1 / span 4;
   transform: translateY(-6rem);
-  
+  background-attachment: fixed !important;
+
 }
 
 .highlight {

@@ -19,22 +19,22 @@ function Header() {
   }, []);
 
   return (
-    <header className={classes.header} style={{transform: "skewY(-2deg)" }}>
+    <header className={classes.header} >
       
       <div
         className={classes.header__title}
-        style={{ backdropFilter: `blur(${blurValue}px)`, boxShadow: "rgba(0, 0, 0, 0.45) 0px 25px 20px -20px"}} 
+        style={{ backdropFilter: `blur(${blurValue}px)`}} 
       >
         <div>
-          <h1 style={{ color: "white", marginBottom: "120px", transform: "skewY(2deg)" }}>
+          <h1 style={{ color: "white", marginBottom: "120px"}}>
             Helping<span className={classes.highlight}> hearing</span> loss
             <br/>
             with<span className={classes.highlight}> activities</span>
           </h1>
         </div>
-        <h4 style={{transform: "skewY(2deg)" }}>A simpler way of practicing</h4>
+        <h4 >A simpler way of practicing</h4>
         <Link to="/auth" state={{ signIn: false }}>
-          <button style={{transform: "skewY(2deg)" }} className="letsstartbutton">Let's start</button>
+          <button className="letsstartbutton">Let's start</button>
         </Link>
       </div>
     </header>

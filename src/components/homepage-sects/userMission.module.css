@@ -16,13 +16,12 @@
   padding: 0 3rem;
   margin: 0 auto;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  background-color: rgba(253, 253, 253, 0.206);
-  backdrop-filter: blur(80px);
+  background-color: #4d4d4d12;
+  backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 6rem;
   padding-left: 9rem;
   font-size: 1.6rem;
-
 }
 
 .mission__card {

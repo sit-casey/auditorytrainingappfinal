@@ -32,9 +32,9 @@ function UserMission() {
      
         <div className={classes.mission__cards}>
         <div className={classes.card}>
-        <hr/>
+      
         <h2 className={styles.section__title} >Your Mission</h2>
-        <hr/>
+    
             <p className={styles.section__description} >At Mission: Audition!, our platform is designed to cater to the diverse goals and aspirations of individuals with cochlear implants. 
               We understand that each user may have unique needs and objectives, and our mission is to support them every step of the way.  </p>
         {/* Display the user missions on the home page */}

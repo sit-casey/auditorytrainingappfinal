@@ -12,6 +12,7 @@ import ReactSwitch from "react-switch";
 
 import logoLight from "../../../src/assets/images/settings-page-light.jpg"; // Tell webpack this JS file uses this image 
 import logoDark from "../../../src/assets/images/settings-page-dark.png"; // Tell webpack this JS file uses this image 
+import { colors } from "@mui/material";
 
 
 function Settings() {
@@ -162,26 +163,17 @@ function Settings() {
           }
         >
           <div className={classes.switch}>
-            <label className={classes.theme_label}>
-              {theme === "light" ? "Light Mode" : "Dark Mode"}
-            </label>
-            <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
           </div>
           {/* <h2 className="text-center mb-4">Update Profile</h2> */}
           {message && <Alert variant="success">{message}</Alert>}
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          <Form className={classes.form} onSubmit={handleSubmit}>
             {/* <Form> */}
             <Form.Group id="email">
               <Form.Label>
                 <h4>Email</h4>
               </Form.Label>
               <Form.Control
-                className={
-                  theme === "light"
-                    ? classes.text_box_light
-                    : classes.text_box_dark
-                }
                 type="email"
                 ref={emailRef}
                 required
@@ -195,11 +187,6 @@ function Settings() {
                 <h4>Current Password</h4>
               </Form.Label>
               <Form.Control
-                className={
-                  theme === "light"
-                    ? classes.text_box_light
-                    : classes.text_box_dark
-                }
                 type="password"
                 ref={currentPasswordRef}
                 placeholder="Enter current password"
@@ -220,11 +207,6 @@ function Settings() {
                 <h4>New Password</h4>
               </Form.Label>
               <Form.Control
-                className={
-                  theme === "light"
-                    ? classes.text_box_light
-                    : classes.text_box_dark
-                }
                 type="password"
                 ref={newPasswordRef}
                 placeholder="Leave blank to keep the same"
@@ -241,14 +223,9 @@ function Settings() {
             </Form.Group>
             <Form.Group id="newPasswordConfirm">
               <Form.Label>
-                <h4>Confirm New Password</h4>
+                <h4 style={{ color: ""}}>Confirm New Password</h4>
               </Form.Label>
               <Form.Control
-                className={
-                  theme === "light"
-                    ? classes.text_box_light
-                    : classes.text_box_dark
-                }
                 type="password"
                 ref={newPasswordConfirmRef}
                 placeholder="Leave blank to keep the same"
