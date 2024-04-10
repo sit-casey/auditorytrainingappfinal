@@ -39,8 +39,6 @@
 
   .buttonlayout {
     display: grid;
-    grid-template-areas: "button1 button2 button3"
-                         "button4 button5 button5";
     grid-gap: 5px;
   }
 

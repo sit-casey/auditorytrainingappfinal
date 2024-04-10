@@ -21,6 +21,8 @@ import LingMatchingPage4 from "./pages/ling/LingMatchingPage4";
 import CrossWord from "./components/crossWord/CrossWord";
 import CrossWord2 from "./components/crossWord2/CrossWord2";
 import LingComprehension from "./components/lingComprehension/LingComprehension";
+import LingComprehension2 from "./components/lingComprehension2/LingComprehension2";
+import LingComprehension3 from "./components/lingComprehension3/LingComprehension3";
 import LingDetectionPageGame2 from "./pages/ling/LingDetectionPageGame2";
 import LingDiscriminationPage from "./pages/ling/LingDiscriminationPage";
 import LingDiscriminationPageGame2 from "./pages/ling/LingDiscriminationPageGame2";
@@ -224,6 +226,26 @@ function App() {
               element={
                 authContext.isLoggedIn ? (
                   <LingComprehension />
+                ) : (
+                  <Navigate to="/auth" />
+                )
+              }
+            />
+             <Route
+              path="/lingActivity/comprehensionlvl2"
+              element={
+                authContext.isLoggedIn ? (
+                  <LingComprehension2 />
+                ) : (
+                  <Navigate to="/auth" />
+                )
+              }
+            />
+            <Route
+              path="/lingActivity/comprehensionlvl3"
+              element={
+                authContext.isLoggedIn ? (
+                  <LingComprehension3 />
                 ) : (
                   <Navigate to="/auth" />
                 )

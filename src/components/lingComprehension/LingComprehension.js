@@ -93,8 +93,10 @@ function QuizGame() {
 
   // Handle answer selection
   const handleAnswer = (option, index) => {
-    setSelectedOption(index);
     const isCorrect = option === questions[currentQuestionIndex].answer;
+    if (isCorrect) {
+      setScore((prevScore) => prevScore + 1);
+    }
     setIsAnswerCorrect(isCorrect);
   
     if (isCorrect) {
@@ -120,8 +122,7 @@ function QuizGame() {
     }
   }, [currentQuestionIndex, gameState]); // Only trigger when these dependencies change
 
-  // Calculate progress as a percentage
-  const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
+
 
 
   return (
@@ -130,9 +131,9 @@ function QuizGame() {
     <div className={classes.gameContainer}>
       <div className={classes.title}>Listen Carefully
       {gameState !== 'idle' && (
-        <div className={classes.progressContainer}>
-          <div className={classes.progressBar} style={{ width: `${progressPercentage}%` }}></div>
-        </div>
+         <div className={classes.scoreContainer}>
+         Score: {score} / 8
+       </div>
       )}
       </div>
      
