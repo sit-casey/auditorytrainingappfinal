@@ -4,7 +4,7 @@
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background-color: rgba(var(--light-blue));
+  background-color: white;
   position: relative;
 }
 
@@ -19,9 +19,9 @@
 
 .play__button {
   transform: translate(-35%, -50%);
-  height: 60%;
-  width: 50%;
-  background-color: rgba(var(--light-yellow));
+  height: 30%;
+  width: 25%;
+  background-color: rgb(49, 49, 49);
   clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
 }
 
@@ -47,6 +47,6 @@
   height: 70%;
   width: 70%;
   border-radius: 50%;
-  background-color: rgba(var(--light-yellow));
+  background-color: rgba(var(--main-blue));
   transform: translate(-50%, -50%);
 }

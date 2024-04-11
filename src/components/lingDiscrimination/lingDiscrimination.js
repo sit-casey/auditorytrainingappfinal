@@ -196,11 +196,10 @@ function LingDiscrimination(props) {
                 <div className={classes.bg__container}>
                     <section className={classes.activity}>
                         {/* Progress bar */}
-                        <Progress refSetter={refSetter} />
                         <div className={classes.activity__items}>
                             <div className={classes.opts}>
                                 {/* Play sound buttons */}
-                                <p>
+                                <div className={classes.sound_btn_container}>
                                     <button
                                         className={classes.btn_push_blue}
                                         onClick={() => {
@@ -238,7 +237,7 @@ function LingDiscrimination(props) {
                                     >
                                         🔊
                                     </button>
-                                </p>
+                                </div>
 
                                 <div className="activity_instruction">
                                     <h3>

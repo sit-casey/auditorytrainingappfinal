@@ -149,7 +149,7 @@ return (
 
   {gameState === 'idle' && (
     <div className={classes.startButtonContainer}>
-      <Link to="/activity/gameActivities/audioMemoryGame" style={{ textDecoration: 'none', color: 'gray', fontSize: '30px', fontFamily: "Google Sans", position: 'absolute', top: '10px', left: '10px' }}>
+      <Link to="/activity/gameActivities/audioMemoryGame" style={{ textDecoration: 'none', color: 'gray', fontSize: '30px', fontFamily: "Google Sans,Roboto,Arial,sans-serif" ,  position: 'absolute', top: '10px', left: '10px' }}>
         X
       </Link>
       <button className={classes.startButton} onClick={handleStartGame}>
@@ -160,7 +160,7 @@ return (
 
   {(gameState === 'ready' || gameState === 'waitingForInput') && (
     <div className={classes.wordsContainer}>
-      <Link to="/activity/gameActivities/audioMemoryGame" style={{ textDecoration: 'none', color: 'gray', fontSize: '30px', fontFamily: "Google Sans",  position: 'absolute', top: '10px', left: '10px' }}>
+      <Link to="/activity/gameActivities/audioMemoryGame" style={{ textDecoration: 'none', color: 'gray', fontSize: '30px', fontFamily: "Google Sans,Roboto,Arial,sans-serif" ,  position: 'absolute', top: '10px', left: '10px' }}>
         X
       </Link>
       

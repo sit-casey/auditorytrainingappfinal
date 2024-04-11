@@ -3,7 +3,8 @@
   height: 44rem;
   padding: 0 3rem;
   margin: 0 auto;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;  background-color: rgba(var(--white), 0.6);
+  box-shadow: 0 45px 100px rgba(0, 0, 0, 0.4);
+  background-color: rgba(var(--white), 0.6);
   border-radius: 3px;
   padding-left: 9rem;
   font-size: 1.6rem;
@@ -130,4 +131,7 @@
   padding: 0 15px 15px;
   font-size: 14px;
   line-height: 1.5;
+}
+.section__description{
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
 }

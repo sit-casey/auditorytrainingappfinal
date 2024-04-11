@@ -154,7 +154,7 @@ input:focus:invalid {
 }
 
 .btn__blue {
-  background-color: rgba(var(--main-blue));
+  background-color: white;
 }
 
 .btn__blue:hover {

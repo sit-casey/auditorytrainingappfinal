@@ -171,7 +171,7 @@ function Settings() {
             {/* <Form> */}
             <Form.Group id="email">
               <Form.Label>
-                <h4>Email</h4>
+                <div style={{fontSize: '24px'}}>Email</div>
               </Form.Label>
               <Form.Control
                 type="email"
@@ -184,7 +184,7 @@ function Settings() {
             
             <Form.Group id="currentPassword">
               <Form.Label>
-                <h4>Current Password</h4>
+                <div style={{fontSize: '24px'}}>Current Password</div>
               </Form.Label>
               <Form.Control
                 type="password"
@@ -204,7 +204,7 @@ function Settings() {
             </Form.Group>
             <Form.Group id="newpassword">
               <Form.Label>
-                <h4>New Password</h4>
+                <div style={{fontSize: '24px'}} >New Password</div>
               </Form.Label>
               <Form.Control
                 type="password"
@@ -223,7 +223,7 @@ function Settings() {
             </Form.Group>
             <Form.Group id="newPasswordConfirm">
               <Form.Label>
-                <h4 style={{ color: ""}}>Confirm New Password</h4>
+                <div style={{fontSize: '24px'}}>Confirm New Password</div>
               </Form.Label>
               <Form.Control
                 type="password"
@@ -253,14 +253,7 @@ function Settings() {
         {/* </Card> */}
  
        
-       {/* Conditional rendering for logo */}
-       <div className={classes.logobutton}>
-          {theme === "light" ? (
-            <img src={logoLight} alt="Light Mode Logo" />
-          ) : (
-            <img src={logoDark} alt="Dark Mode Logo" />
-          )}
-        </div>
+       
       
         <div className="w-100 text-center mt-2">
         

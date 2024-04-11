@@ -72,8 +72,7 @@ button:disabled {
   display: flex; /* Align buttons horizontally */
   justify-content: center; /* Center buttons in the container */
   gap: 20px; /* Space between buttons */
-  margin-top: 20px; /* Adjust spacing from the elements above */
-  margin-right: 115px;
+  margin-top: 30px; /* Adjust spacing from the elements above */
 }
 
 .sequenceDisplay {
@@ -139,18 +138,16 @@ button:disabled {
   gap: 20px;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Ensure it occupies the full width of its parent */
 }
 
 .startButtonContainer {
   width: 100%; /* This ensures the container spans the full width */
   display: flex;
   justify-content: center;
-  margin-right: 90px;
 }
 
 
-.wordButton { /* Apply the same style to startButton and wordButton */
+.wordButton { 
   width: 100px; /* Same width and height for a square button */
   height: 100px;
   font-size: 16px;

@@ -56,7 +56,7 @@ function NavProfile() {
             <span className={classes.profile__text}>{userData.lName} </span>
           </div>
         ) : (
-          "Loading..."
+          <div className={classes.loader}></div>
         )}
         {/* Link to profile */}
         <ul className={classes.list__container}>

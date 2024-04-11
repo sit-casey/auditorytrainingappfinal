@@ -2,11 +2,12 @@
 
 /* General settings for alignment and spacing */
 .settings_light, .settings_dark {
-  padding: 20px;
+  padding: 60px;
 }
 
 .header__title {
   text-align: center;
+  margin-top: 5rem;
   margin-bottom: 20px;
 }
 
@@ -21,7 +22,7 @@
   max-width: 600px; /* Adjust based on preference */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;  
   margin-bottom: 20px;
 }
 
@@ -50,14 +51,14 @@
 .image {
   cursor: pointer;
   width: 20px;
-  margin-top: -30px;
+  margin-top: -6.5rem;
   margin-left: 95%;
   position: relative;
 }
 
 .password_button {
-  background-color: #007bff;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(49, 49, 49);
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -65,8 +66,8 @@
   cursor: pointer;
 }
 
-.password_button:disabled {
-  background-color: #ccc;
+.password_button:hover {
+  background-color: #ffffff;
 }
 
 .logobutton img {

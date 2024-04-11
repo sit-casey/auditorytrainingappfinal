@@ -238,3 +238,14 @@ p{
   cursor: pointer;
   /* background-color: rgb(202, 202, 202); */
 }
+.loader {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(farthest-side,#363636 94%,#0000) top/9px 9px no-repeat,
+  conic-gradient(#0000 30%,#363636);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+  animation: spin 2s linear infinite;
+  margin-left: 20rem;
+  margin-top: 1.5rem;
+}
