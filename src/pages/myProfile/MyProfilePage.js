@@ -44,38 +44,48 @@ function MyProfilePage() {
   const [hidePronouns, setHidePronouns] = useState(null);
   const user = useContext(AuthContext).fbUser;
 
-
-  useEffect(async () => {
-
-    //Retrieve userData from db, and change state variables
-    const getUserData = async function () {
-      const myUId = doc(db, user);
-      setUId(myUId);
-      const result = await getDoc(myUId);
-      setUserData(result.data());
-      setHideLocation(result.data().privateLocation);
-      setHideAge(result.data().privateAge);
-      setHidePronouns(result.data().privatePronouns);
-      setOldPicURL(result.data().profilePic);
-      console.log(userData);
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const myUId = doc(db, user);
+        setUId(myUId);
+        const result = await getDoc(myUId);
+        if (result.exists()) {
+          const userData = result.data();
+          setUserData(userData);
+          setHideLocation(userData.privateLocation);
+          setHideAge(userData.privateAge);
+          setHidePronouns(userData.privatePronouns);
+          setOldPicURL(userData.profilePic);
+        } else {
+          console.log("No user data found");
+        }
+      } catch (error) {
+        console.error("Failed to fetch user data:", error);
+      }
     };
-    //Call declared method
-    await getUserData();
-  }, []);
+  
+    getUserData();
+  }, [db, user]); 
 
-  useEffect(async () => {
-    //Updating profile picture
-    const picDataForUpdate = {
-      profilePic: picURL,
+  useEffect(() => {
+    const updateProfilePic = async () => {
+      try {
+        if (picURL != null) {
+          const picDataForUpdate = {
+            profilePic: picURL,
+          };
+          await updateDoc(UId, picDataForUpdate);
+          setUploadMsg("Image uploaded successfully!");
+          setOldPicURL(picURL);
+        }
+      } catch (error) {
+        console.error("Failed to update profile picture:", error);
+      }
     };
-
-    //If there is a picURL, update db, set pic, and send confirmation msg
-    if (picURL != null) {
-      await updateDoc(UId, picDataForUpdate);
-      setUploadMsg("Image uploaded successfully!");
-      setOldPicURL(picURL);
-    }
-  }, [picURL]);
+  
+    updateProfilePic();
+  }, [picURL, UId]);
 
   //Upload profile pic to db
   const handleUpload = () => {

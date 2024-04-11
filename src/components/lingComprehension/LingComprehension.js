@@ -132,7 +132,7 @@ function QuizGame() {
       <div className={classes.title}>Listen Carefully
       {gameState !== 'idle' && (
          <div className={classes.scoreContainer}>
-         Score: {score} / 8
+         Score: {score} / qu
        </div>
       )}
       </div>
