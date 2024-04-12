@@ -92,9 +92,10 @@ function DetectionForum() {
                 <div className={classes.postTextContainer}>
                   <p>{post.createdBy}</p>
                   <p>{post.createdAt.toDate().toLocaleString()}</p>
-                  <p>{post.postText}</p>
-                  {post.fileUrl && <img src={post.fileUrl} alt="Post attachment" style={{ maxWidth: '100%' }} accept="image/png, image/gif, image/jpeg, image.webp"/>}
+                  {post.fileUrl && <img src={post.fileUrl} alt="Post attachment" style={{ width: '500px',maxWidth: '100%', marginBottom: '3rem' }} accept="image/png, image/gif, image/jpeg, image.webp"/>}
 
+                  <p>{post.postText}</p>
+                 
                   <div>
                   <input className={classes.input}
                     type="text"
