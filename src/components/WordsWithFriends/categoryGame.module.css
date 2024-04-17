@@ -1,0 +1,59 @@
+.gameContainer {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px; /* Increased width */
+    height: 800px; /* Increased height */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-sizing: border-box; /* Include padding and border in the container's dimensions */
+    padding: 40px; /* Added padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .gameGrid {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .gameRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gameCell {
+    width: 40px; /* Adjusted width */
+    height: 40px; /* Adjusted height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    background-color: white;
+  }
+  
+  .letter {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .gridContainer {
+    width: 100%;
+    margin-bottom: 20px;
+  }  

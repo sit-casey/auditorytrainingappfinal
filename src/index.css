@@ -1,11 +1,11 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 50;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
   font-size: 62.5%;
 }
-
+/*rgba(var(--main-blue))*/
 :root {
   --white: 255, 255, 255;
   --black: 0, 0, 0;
@@ -21,14 +21,19 @@
 }
 
 body {
-  /* background: rgba(var(--main-blue)); */
+  background: #ffffff;
+  overflow-x: hidden !important;
 }
 
 h1 {
-  font-size: 5.5rem;
+text-align: center;
+font: 5.5rem "Google Sans",Roboto,Arial,sans-serif;
+margin-bottom: 20px;
+color: #2c2c2c ;
 }
 
 h2 {
+  text-align: center;
   font-size: 4rem;
 }
 
@@ -37,6 +42,7 @@ h3 {
 }
 
 h4 {
+  text-align: center;
   font-size: 2.5rem;
 }
 
@@ -46,30 +52,59 @@ h5 {
 
 p,
 span {
-  font-size: 1.5rem;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font: 1.5rem 'Roboto', sans-serif;;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  
+}
+hr {
+  display: flex;
+  align-items: center;
+  --text-divider-gap: 1rem;
+
+  
+  &:before {
+    margin-right: var(--text-divider-gap);
+
+  }
+  
+  &:after {
+    margin-right: var(--text-divider-gap);
+
+  }
+}
+.hr::before,
+.hr::after {
+  content: '';
+  height: 1px;
+  background-color: silver;
+  flex-grow: 1;
+  width: auto;
 }
 
 input:valid {
-  border-bottom: 1px rgba(var(--main-blue)) solid;
+  border-bottom: 1.5px rgba(255,255,255,.3);
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 input:focus:invalid {
   border-bottom: 1px rgba(var(--main-yellow)) solid;
+  background-color: #ffffff00 !important;
+
 }
 
 .btn,
-.btn-yellow,
-.btn-blue {
+.btn-yellow{
   text-transform: capitalize;
   border: none;
   border-radius: 0.6rem;
   display: inline-block;
   cursor: pointer;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: Arial;
   padding: 0.7rem 5rem;
   margin: 1rem;
@@ -80,14 +115,46 @@ input:focus:invalid {
 }
 
 .btn__yellow {
-  background-color: rgba(var(--main-yellow));
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 38px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
 }
+
 .btn__yellow:hover {
-  background-color: rgba(var(--dark-yellow));
+  background: #F6F9FE;
+  color: #174ea6;
 }
 
 .btn__blue {
-  background-color: rgba(var(--main-blue));
+  background-color: white;
 }
 
 .btn__blue:hover {
@@ -100,8 +167,36 @@ input:focus:invalid {
 }
 
 .loading__img {
-  z-index: 2;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
 }
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+input,
+textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 0px;
+  border-bottom: 1px #44444400 !important;
+  border-color: #44444400;
+  background-color: rgba(47, 60, 85, 0);
+  height: 50px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
 
 .loading__img__container {
   height: 100vh;
@@ -135,3 +230,145 @@ input:focus:invalid {
   outline: none;
   font-size: 25px;
 }
+/* CSS */
+.letsstartbutton {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  background: #111;
+  text-shadow: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 50px;
+  
+}
+
+.letsstartbutton:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  color: darkblue;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.letsstartbutton:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+/* Bubble Game CSS */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #7ec8e3; /* You can change this to any color you want */
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+
+.bubble:active {
+  transform: scale(1.5);
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.scoreContainer {
+  position: absolute;
+  bottom: 20px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  font-size: 28px; 
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.5); 
+  padding: 5px 10px; 
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto; 
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.app {
+  display: flex;
+  padding: 30px;
+}
+
+.game {
+  width: 560px;
+  height: 560px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game img {
+  width: 70px;
+  height: 70px;
+}
+
+/* End of Bubble Game CSS */

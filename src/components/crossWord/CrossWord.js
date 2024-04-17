@@ -101,7 +101,8 @@ const CrossWord = () => {
               margin: '5px',
               fontSize: '1px',
               height: '50px',
-              width: '50px'
+              width: '50px',
+              color: 'rgb(49, 49, 49)',
               // textDecoration: foundWords.includes(word.word) ? 'line-through' : 'none',
             }}
             onClick={() => playSound(word.sound)}

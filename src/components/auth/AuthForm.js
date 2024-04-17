@@ -173,7 +173,7 @@ function AuthForm(props) {
         localStorage.setItem("user", data.localId.toString());
         const expTime = new Date(new Date().getTime() + +data.expiresIn * 1000);
         authContext.login(data.idToken, expTime);
-        navigate("/dashboard", { replace: true });
+        navigate("/", { replace: true });
         setIsLoading(false);
       })
       .catch((err) => {
@@ -353,11 +353,7 @@ function AuthForm(props) {
             </button>
           ) : (
             // Is loading - display loading img
-            <img
-              className="loading__img"
-              src={require("../../assets/images/loading.gif")}
-              alt="Loading"
-            />
+            <div className={classes.loader}></div>
           )}
         </div>
         {/* End forum */}

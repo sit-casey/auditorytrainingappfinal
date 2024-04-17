@@ -1,10 +1,56 @@
+import React from 'react';
+import Nav from "../../components/nav/Nav";
+function ReportsPage2() {
+    // Inline CSS for basic styling
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh', // Full screen height
+        textAlign: 'center',
+        background: '-webkit-linear-gradient(45deg, #49a09d, #5f2c82)',
+        background: 'linear-gradient(45deg, #49a09d, #5f2c82)',
+    };
+
+    const textStyle = {
+        fontSize: '100px',
+        color: 'white', // Dark grey text
+    };
+
+    const secondaryTextStyle = {
+        marginTop: '20px',
+        fontSize: '15px',
+        color: 'white', // Lighter grey text
+    };
+
+    return (
+      <>
+      <Nav></Nav>
+      <div style={containerStyle}>
+            <h1 style={textStyle}>Coming Soon!</h1>
+            <p style={secondaryTextStyle}>We are working hard to launch our new site. Stay tuned!</p>
+        </div>
+      </>
+        
+    );
+}
+
+export default ReportsPage2;
+
+  
+  
+  
+  
+  
+  {/* 
 import React, { useState, useEffect, useRef } from "react";
 import useFetch from "../../components/custHooks/useFetch";
 import Nav from "../../components/nav/Nav";
 import classes from "./reportsPage2.module.css";
 import Button from "react-bootstrap/Button";
 
-import reportIcon from "../../assets/icons/report_Icon.jpg";
+//import reportIcon from "../../assets/images/report_Icon.jpg";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -148,23 +194,13 @@ function ReportsPage2() {
   };
 
   return (
-    <div>
-      <div style={{ marginBottom: "-230px" }}>
-        <img
-          src={reportIcon}
-          alt="Your Alternative Text"
-          style={{
-            width: "170px",
-            height: "auto",
-            margin: "40px 0",
-          }}
-        />
-      </div>
-
-      {detectionData.length > 0 && (
+    <>
+    <Nav />
+    
+    {detectionData.length > 0 && (
         <div>
           <div>
-            <Nav />
+            
           </div>
           <div className={classes.header}>
             <h1>Reports</h1>
@@ -186,7 +222,6 @@ function ReportsPage2() {
             </div>
           </div>
 
-          {/* Conditional rendering for the table and pagination */}
           <React.Fragment>
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -204,7 +239,7 @@ function ReportsPage2() {
                       <StyledTableCell size="small">{row.activityType}</StyledTableCell>
                       <StyledTableCell>{row.date}</StyledTableCell>
                       <StyledTableCell>{row.time}</StyledTableCell>
-                      <StyledTableCell>{row.score}%</StyledTableCell> {/* Add "%" symbol here */}
+                      <StyledTableCell>{row.score}%</StyledTableCell> 
                     </StyledTableRow>
                   ))}
                 </TableBody>
@@ -226,17 +261,20 @@ function ReportsPage2() {
             </div>
           </React.Fragment>
 
-          {/* Display a message when the data is loading */}
           {isLoading && <p>Loading data...</p>}
         </div>
-      )}
-    </div>
+      )} 
+  
+    
+    
+    </>
+    
   );
 }
 
 export default ReportsPage2;
 
-
+*/}
 
 
 

@@ -1,36 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import classes from "./header.module.css";
 
-//Purpose: Header of main page
 function Header() {
+  const [blurValue, setBlurValue] = useState(0); // Stores the current blur value for backdrop-filter
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const newBlurValue = Math.min(50, scrollPosition / 30); // Adjust these values as needed
+    setBlurValue(newBlurValue);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={classes.header}>
-      <div className={classes.header__title}>
-        {/* Catchphrase at the front page */}
-        <h1>
-          Helping
-          <span className={classes.highlight}>hearing</span>
-          loss
-          <br />
-          with<span className={classes.highlight}>activities</span>
-        </h1>
-
-        {/* Subheading */}
-        <h4>A simpler way of practicing</h4>
-        
-        {/* Button to login if not already*/}
+    <header className={classes.header} >
+      
+      <div
+        className={classes.header__title}
+        style={{ backdropFilter: `blur(${blurValue}px)`}} 
+      >
+        <div>
+          <h1 style={{ color: "white", marginBottom: "120px"}}>
+            Helping<span className={classes.highlight}> hearing</span> loss
+            <br/>
+            with<span className={classes.highlight}> activities</span>
+          </h1>
+        </div>
+        <h4 >A simpler way of practicing</h4>
         <Link to="/auth" state={{ signIn: false }}>
-          <button className="btn btn__blue">Let's start</button>
+          <button className="letsstartbutton">Let's start</button>
         </Link>
-
-        {/* Image in header */}
-        <img
-          src={require("../../assets/images/test-img.jpg")}
-          alt="hearing-aid"
-          className={classes.header__img}
-        />
       </div>
     </header>
   );

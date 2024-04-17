@@ -52,35 +52,27 @@ function Game(props) {
   //Display - the actual information within the cards of Activities.js
   return (
     <>
-      {/* Link to the appropriate activity. */}
+      {/* Links to associated options link */}
       <Link to={props.link}>
-      <div className={classes.col_3}>
-            <span className={classes.col_3_1}>Level {props.level}</span>
-            </div>
-        <div className={classes.activity__container} onClick={setLatest}>
+        <div className={classes.activity__container}>
           <figure className={classes.col_1}>
-            {/* Img within the card */}
+            
+            {/* Image */}
             <img
               className={classes.col_1_img}
               src={require(`../../assets/icons/${props.src}.png`)}
-              alt=""
+              alt="Error"
             />
-
-            {/* Card title */}
+            
+            {/* Description and Title */}
             <figcaption className={classes.info}>
-              <span className={classes.main__info}>
-                {" "}
-                {props.title}
-                <br></br>
-              </span>
-
-              {/* Description */}
+              <span className={classes.main__info}> {props.title}<br></br></span>
               <span className={classes.sub__info}>
                 {props.desc}
               </span>
             </figcaption>
-          </figure>         
-          </div>
+          </figure>
+        </div>
       </Link>
     </>
   );

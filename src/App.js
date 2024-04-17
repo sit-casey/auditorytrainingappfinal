@@ -6,6 +6,7 @@ import {
     Navigate,
 } from "react-router-dom";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from "./pages/homePage/HomePage";
 import AuthPage from "./pages/auth/AuthPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
@@ -19,6 +20,9 @@ import LingMatchingPage3 from "./pages/ling/LingMatchingPage3";
 import LingMatchingPage4 from "./pages/ling/LingMatchingPage4";
 import CrossWord from "./components/crossWord/CrossWord";
 import CrossWord2 from "./components/crossWord2/CrossWord2";
+import LingComprehension from "./components/lingComprehension/LingComprehension";
+import LingComprehension2 from "./components/lingComprehension2/LingComprehension2";
+import LingComprehension3 from "./components/lingComprehension3/LingComprehension3";
 import LingDetectionPageGame2 from "./pages/ling/LingDetectionPageGame2";
 import LingDiscriminationPage from "./pages/ling/LingDiscriminationPage";
 import LingDiscriminationPageGame2 from "./pages/ling/LingDiscriminationPageGame2";
@@ -31,6 +35,8 @@ import GamePageMatching from "./pages/gamePage/GamePageMatching";
 import GamePageCrossWords from "./pages/gamePage/GamePageCrossWords";
 import GamePageDiscrimination from "./pages/gamePage/GamePageDiscrimination";
 import GamePageIdentification from "./pages/gamePage/GamePageIdentification";
+import GamePageComprehesion from "./pages/gamePage/GamePageComprehesion";
+import GamePageAudioMemory from "./pages/gamePage/GamePageAudioMemory"; 
 import DetectionForum from "./pages/forum/DetectionForum";
 import MyProfilePage from "./pages/myProfile/MyProfilePage";
 import ReportsPage2 from "./pages/reportsPage/reportsPage2";
@@ -38,6 +44,13 @@ import Settings from "./pages/settings/Settings";
 import SupportPage from "./pages/supportPage/SupportPage";
 import InBetweenPage from "./pages/inBetweenPage/inBetweenPage";
 import VoiceSelectorPage from "./pages/voiceSelectorPage/voiceSelectorPage";
+import AudioMemory from "./components/audioMemory/AudioMemory";
+import AudioMemoryLvl2 from "./components/audioMemoryLvl2/AudioMemorylvl2";
+import AudioMemoryLvl3 from "./components/audioMemoryLvl3/AudioMemorylvl3";
+import AudioMemoryLvl4 from "./components/audioMemoryLvl4/AudioMemorylvl4";
+import CategoryGame from "./components/WordsWithFriends/CategoryGame";
+import BubbleDetection from "./pages/gamePage/BubbleDetection";
+
 
 export const ThemeContext = createContext(null);
 
@@ -140,11 +153,102 @@ function App() {
                                 )
                             }
                         />
-                        <Route
+                         <Route
+                            path="/activity/comprehension"
+                            element={
+                                authContext.isLoggedIn ? (
+                                    <GamePageComprehesion />
+                                ) : (
+                                    <Navigate to="/auth" />
+                                )
+                            }
+                        />
+                         
+            <Route
               path="/activity/gameActivities/matching"
               element={
                 authContext.isLoggedIn ? (
                   <GamePageMatching />
+                ) : (
+                  <Navigate to="/auth" />
+                )
+              }
+            />
+           <Route
+                path="/activity/gameActivities/audioMemoryGame"
+                element={
+                authContext.isLoggedIn ? (
+                    <GamePageAudioMemory /> 
+                    )   :  ( 
+                        <Navigate to="/auth"  />
+                    )
+                }
+            />
+            <Route
+                path="/gameActivity/audioMemory"
+                element={
+                authContext.isLoggedIn ? (
+                    <AudioMemory /> 
+                    )   :  ( 
+                        <Navigate to="/auth"  />
+                    )
+                }
+            />
+            <Route
+                path="/gameActivity/audioMemorylvl2"
+                element={
+                authContext.isLoggedIn ? (
+                    <AudioMemoryLvl2 /> 
+                    )   :  ( 
+                        <Navigate to="/auth"  />
+                    )
+                }
+            />
+            <Route
+                path="/gameActivity/audioMemorylvl3"
+                element={
+                authContext.isLoggedIn ? (
+                    <AudioMemoryLvl3 /> 
+                    )   :  ( 
+                        <Navigate to="/auth"  />
+                    )
+                }
+            />
+            <Route
+                path="/gameActivity/audioMemorylvl4"
+                element={
+                authContext.isLoggedIn ? (
+                    <AudioMemoryLvl4 /> 
+                    )   :  ( 
+                        <Navigate to="/auth"  />
+                    )
+                }
+            />
+             <Route
+              path="/lingActivity/comprehensionlvl1"
+              element={
+                authContext.isLoggedIn ? (
+                  <LingComprehension />
+                ) : (
+                  <Navigate to="/auth" />
+                )
+              }
+            />
+             <Route
+              path="/lingActivity/comprehensionlvl2"
+              element={
+                authContext.isLoggedIn ? (
+                  <LingComprehension2 />
+                ) : (
+                  <Navigate to="/auth" />
+                )
+              }
+            />
+            <Route
+              path="/lingActivity/comprehensionlvl3"
+              element={
+                authContext.isLoggedIn ? (
+                  <LingComprehension3 />
                 ) : (
                   <Navigate to="/auth" />
                 )
@@ -327,6 +431,26 @@ function App() {
                                     <DetectionForum />
                                 ) : (
                                     <Navigate to="/auth" />
+                                )
+                            }
+                        />
+                        <Route
+                            path="/activity/gameActivities/bubbledetection"
+                            element={
+                                authContext.isLoggedIn ? (
+                                <BubbleDetection />
+                                ) : (
+                                <Navigate to="/auth" />
+                                )
+                            }
+                        />
+                        <Route
+                            path="/activity/gameActivities/categoryGame"
+                            element={
+                                authContext.isLoggedIn ? (
+                                <CategoryGame />
+                                ) : (
+                                <Navigate to="/auth" />
                                 )
                             }
                         />

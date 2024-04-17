@@ -1,20 +1,71 @@
+/* activityPage.module.css */
+
 .main__container {
   max-width: 170rem;
   height: 100vh;
   padding: 10rem 20rem;
   margin: auto;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 
-.header__title {
-  color: #444;
+.nav {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 10;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-rows: repeat(2, 200px);
-  gap: 10px;
-  grid-auto-flow: row;
-  grid-auto-columns: 300px 100px;
+.cardsLatest__container, .games__container, .acts_display__mNRER {
+  padding: 2rem;
+  margin-top: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  max-width: 100%;
 }
 
+.playButton {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: center;
+  padding: 2px 24px;
+  text-align: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  width: auto;
+  margin-top: 1rem;
+}
+
+.playButton:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.pop__container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add more styles as needed for other elements within your GamePage */

@@ -6,6 +6,7 @@ import useFetch from "../custHooks/useFetch";
 import Progress from "../progressBar/Progress";
 import PlayButton from "../playButton/PlayButton";
 import Completed from "../Completed/Completed";
+import BackgroundMusicSelector from "../backgroundMusic/backgroundMusic";
 
 import classes from "./lingDiscrimation.module.css";
 
@@ -185,13 +186,14 @@ function LingDiscriminationLvl2(props) {
             {/* Actual Game */}
             {!soundS && (
                 <div className={classes.bg__container}>
+                      <BackgroundMusicSelector />
                     <section className={classes.activity}>
                         {/* Progress bar */}
-                        <Progress refSetter={refSetter} />
+                        
                         <div className={classes.activity__items}>
                             <div className={classes.opts}>
                                 {/* Play sound buttons */}
-                                <p>
+                                <div className={classes.sound_btn_container}>
                                     <button
                                         className={classes.btn_push_blue}
                                         onClick={() => {
@@ -229,7 +231,7 @@ function LingDiscriminationLvl2(props) {
                                     >
                                         🔊
                                     </button>
-                                </p>
+                                </div>
 
                                 <div className="activity_instruction">
                                     <h3>

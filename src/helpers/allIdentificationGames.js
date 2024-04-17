@@ -5,13 +5,13 @@ const allIdentificationGames = {
     {
       title: "One v.s. Three",
       link: "/lingActivity/identification",
-      src: "identification",
+      src: "number-1-green",
       desc: "Detect whether one or multiple sounds played"
     },
     {
       title: "How many sounds",
       link: "/lingActivity/identification2",
-      src: "identification",
+      src: "number-two-yellow",
       desc: "Determine the number of sounds that played"
     },
   ],

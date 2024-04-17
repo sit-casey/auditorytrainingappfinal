@@ -1,16 +1,25 @@
-import { React } from "react";
-
+import React, { useRef } from "react";
 import Game from "../game/Game";
-
 import classes from "./acts.module.css";
 
-/*
-Purpose: Display for Activities Page. Contains the information to pass to cards (Activity) on the page.
-Focuses on "ALl Activities" Section. To Edit "Recent Activities", refer back to ActivityPage.js
-*/
 function Games(props) {
+  const displayRef = useRef(null); // Step 1: Creating a ref
 
-  //Handles the color coded difficulty.
+  // Step 2: Function to handle left scroll
+  const scrollLeft = () => {
+    if (displayRef.current) {
+      displayRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  // Step 2: Function to handle right scroll
+  const scrollRight = () => {
+    if (displayRef.current) {
+      displayRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
+  // Handles the color-coded difficulty.
   const lvlColorHandler = (lvl) => {
     if (lvl === 1) return `1`;
     if (lvl === 2) return `2`;
@@ -23,25 +32,24 @@ function Games(props) {
     <div className={classes.acts__container}>
       <h3>All Games</h3>
       <div className={classes.acts__title}>
-      {/* Ling Activity is passed here as props.title. */}
-        <h2>{props.title}</h2> 
+        {/* Adding buttons for scrolling */}
+        
       </div>
 
-      <div className={classes.display}>
-      {/* Retrieves list of activities from Actiivity helper*/}
+      <div className={classes.display} ref={displayRef}>
         {props.gamesArr.map((card, i) => (
-
-          // Actual activity object that displays each individual card
           <Game
             key={i}
             title={card.title}
             src={card.src}
-            link={card.link} //Adjust link to new
+            link={card.link}
             level={lvlColorHandler(card.level)}
             desc={card.desc}
           />
         ))}
+        
       </div>
+     
     </div>
   );
 }

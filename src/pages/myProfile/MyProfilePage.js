@@ -17,6 +17,7 @@ import {
   RegionDropdown,
   CountryRegionData,
 } from "react-country-region-selector";
+import { Margin, Padding } from "@mui/icons-material";
 
 //Profile page
 function MyProfilePage() {
@@ -43,38 +44,48 @@ function MyProfilePage() {
   const [hidePronouns, setHidePronouns] = useState(null);
   const user = useContext(AuthContext).fbUser;
 
-
-  useEffect(async () => {
-
-    //Retrieve userData from db, and change state variables
-    const getUserData = async function () {
-      const myUId = doc(db, user);
-      setUId(myUId);
-      const result = await getDoc(myUId);
-      setUserData(result.data());
-      setHideLocation(result.data().privateLocation);
-      setHideAge(result.data().privateAge);
-      setHidePronouns(result.data().privatePronouns);
-      setOldPicURL(result.data().profilePic);
-      console.log(userData);
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const myUId = doc(db, user);
+        setUId(myUId);
+        const result = await getDoc(myUId);
+        if (result.exists()) {
+          const userData = result.data();
+          setUserData(userData);
+          setHideLocation(userData.privateLocation);
+          setHideAge(userData.privateAge);
+          setHidePronouns(userData.privatePronouns);
+          setOldPicURL(userData.profilePic);
+        } else {
+          console.log("No user data found");
+        }
+      } catch (error) {
+        console.error("Failed to fetch user data:", error);
+      }
     };
-    //Call declared method
-    await getUserData();
-  }, []);
+  
+    getUserData();
+  }, [db, user]); 
 
-  useEffect(async () => {
-    //Updating profile picture
-    const picDataForUpdate = {
-      profilePic: picURL,
+  useEffect(() => {
+    const updateProfilePic = async () => {
+      try {
+        if (picURL != null) {
+          const picDataForUpdate = {
+            profilePic: picURL,
+          };
+          await updateDoc(UId, picDataForUpdate);
+          setUploadMsg("Image uploaded successfully!");
+          setOldPicURL(picURL);
+        }
+      } catch (error) {
+        console.error("Failed to update profile picture:", error);
+      }
     };
-
-    //If there is a picURL, update db, set pic, and send confirmation msg
-    if (picURL != null) {
-      await updateDoc(UId, picDataForUpdate);
-      setUploadMsg("Image uploaded successfully!");
-      setOldPicURL(picURL);
-    }
-  }, [picURL]);
+  
+    updateProfilePic();
+  }, [picURL, UId]);
 
   //Upload profile pic to db
   const handleUpload = () => {
@@ -82,7 +93,7 @@ function MyProfilePage() {
 
     //Check if it's the default pfp
     if (
-      userData.profilePic !=
+      userData.profilePic !==
       "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/profilePictures%2Fdefault%2Fdefault.jpg?alt=media&token=276e66bb-1827-403b-bb6a-839d6cb9916b"
     ) {
       //Delete old msg
@@ -154,7 +165,10 @@ function MyProfilePage() {
 
     window.location.reload(); //force reload
   };
-
+// Function to toggle edit mode and expansion
+const toggleEdit = () => {
+  setEditProfile(!editProfile);
+};
   //Display
   return (
     <>
@@ -170,6 +184,7 @@ function MyProfilePage() {
               <img
                 className={classes.img_container}
                 src={userData.profilePic}
+                alt = "Profile_Picture"
               />
               {/* Show user's full name and location if hidden flag not triggered */}
              <div
@@ -199,6 +214,13 @@ function MyProfilePage() {
             </div>
             {/* Check if edit profile is not triggered. Show Abouts */}
             <div className={classes.aboutMe_container}>
+              <div className={`main_container ${editProfile ? 'expanded' : ''}`}>
+                {!editProfile && (
+                  <button onClick={toggleEdit} className={classes.profile_buttons}>
+                  {editProfile ? 'Cancel' : 'Edit Profile'}
+                </button>
+                )}
+                </div>
               {!editProfile && (
                 <div>
                   <h5>About Me:</h5>
@@ -210,10 +232,10 @@ function MyProfilePage() {
                   </p>
                 </div>
               )}
-
+              
               {/* Edit profile flag triggered */}
               {editProfile && (
-                <div>
+                <div className={classes.editProfileContainer}>
                   {/* Profile picture upload */}
                   <h5>Upload Profile Picture:</h5>
                   <input
@@ -305,36 +327,40 @@ function MyProfilePage() {
                   <br></br>
 
                   {/* Hide flags */}
-                  <input
-                    type="checkbox"
-                    id="hideLocation"
-                    defaultChecked={userData.privateLocation}
-                    onChange={(e) => setHideLocation(e.target.checked)}
-                  />
-                  <label for="hideLocation" className={classes.checkbox_label}>
-                    {" "}
-                    Hide Location
-                  </label>
-                  <input
-                    type="checkbox"
-                    id="hideAge"
-                    defaultChecked={userData.privateAge}
-                    onChange={(e) => setHideAge(e.target.checked)}
-                  />
-                  <label for="hideAge" className={classes.checkbox_label}>
-                    {" "}
-                    Hide Age
-                  </label>
-                  <input
-                    type="checkbox"
-                    id="hidePronouns"
-                    defaultChecked={userData.privatePronouns}
-                    onChange={(e) => setHidePronouns(e.target.checked)}
-                  />
-                  <label for="hidePronouns" className={classes.checkbox_label}>
-                    {" "}
-                    Hide Pronouns
-                  </label>
+                  <div className={classes.check_box_container}>
+                    <input
+                      type="checkbox"
+                      id="hideLocation"
+                      defaultChecked={userData.privateLocation}
+                      onChange={(e) => setHideLocation(e.target.checked)}
+                    />
+                    <label for="hideLocation" className={classes.checkbox_label}>
+                      {" "}
+                      Hide Location
+                    </label>
+                    <input
+                      type="checkbox"
+                      id="hideAge"
+                      defaultChecked={userData.privateAge}
+                      onChange={(e) => setHideAge(e.target.checked)}
+                    />
+                    <label for="hideAge" className={classes.checkbox_label}>
+                      {" "}
+                      Hide Age
+                    </label>
+                    <input
+                      type="checkbox"
+                      id="hidePronouns"
+                      defaultChecked={userData.privatePronouns}
+                      onChange={(e) => setHidePronouns(e.target.checked)}
+                    />
+                    <label for="hidePronouns" className={classes.checkbox_label}>
+                      {" "}
+                      Hide Pronouns
+                    </label>
+
+                  </div>
+                  
                 </div>
               )}
             </div>
@@ -342,20 +368,13 @@ function MyProfilePage() {
         )}
 
         {/* Buttons at the bottom of screen */}
-        {!editProfile && (
-          <button
-            onClick={() => setEditProfile(true)}
-            className={classes.profile_buttons}
-          >
-            Edit Profile
-          </button>
-        )}
-
+        
         {/* Buttons if editProfile is active */}
         {editProfile && (
           <div>
             <button
               onClick={() => updateInfo()}
+          
               className={classes.save_button}
             >
               Save

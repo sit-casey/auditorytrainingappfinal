@@ -119,22 +119,12 @@
   font-family: "Open Sans";
   text-decoration: none;
   font-size: 52px !important;
-  background: rgb(63, 137, 187);
+  background: rgb(255, 255, 255);
   padding: 20px 20px;
   margin: 10 20px;
-  border: 1px solid #c4c4c4;
-  background: rgb(63, 137, 187);
-  color: rgb(63, 137, 187);
-  border: 1px solid #177c8e;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 60px;
-  -webkit-box-shadow: 0px 5px 0px #177c8e;
-  -moz-box-shadow: 0px 5px 0px #177c8e;
-  -ms-box-shadow: 0px 5px 0px #177c8e;
-  -o-box-shadow: 0px 5px 0px #177c8e;
-  box-shadow: 0px 5px 0px #177c8e;
-  text-shadow: 1px 1px 1px #177c8e;
   cursor: pointer;
   margin-right: 10rem;
 }
@@ -229,13 +219,9 @@
   font-family: "Open Sans";
   text-decoration: none;
   font-size: 30px !important;
-  background: rgb(63, 137, 187);
   padding: 20px 20px;
   margin: 10 10px;
   border: 1px solid #c4c4c4;
-  background: rgb(63, 137, 187);
-  color: rgb(63, 137, 187);
-  border: 1px solid #177c8e;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -246,4 +232,9 @@
   box-shadow: 0px 5px 0px #177c8e;
   text-shadow: 1px 1px 1px #177c8e;
   cursor: pointer;
+}
+.sound_btn_container{
+  justify-content: center;
+  align-items: center;
+  margin-left: 8rem;
 }

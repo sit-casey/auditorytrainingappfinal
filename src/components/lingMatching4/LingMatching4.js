@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import BackgroundMusicSelector from '../backgroundMusic/backgroundMusic';
+import { db } from "../../firebase-config";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { addDoc } from "firebase/firestore";
 
 function MatchingGame4() {
   const [items, setItems] = useState([]);
   const [selected, setSelected] = useState([]);
   const [completed, setCompleted] = useState(false);
+  const [isLevelStored, setIsLevelStored] = useState(false);
 
   // Change these sounds to whatever you want
   const sounds = [
@@ -68,10 +73,41 @@ function MatchingGame4() {
     }
   }, [selected, items]);
 
-  useEffect(() => {
+  useEffect(async () => {
     const completedPairs = items.filter(item => item.matched).length / 2;
     if (completedPairs === 12) {
       setCompleted(true);
+      if (isLevelStored === false) {
+        setIsLevelStored(true);
+        const levelCollectionRef = collection(db, "levels");
+        const userId = localStorage.getItem("user");
+        const gameLevel = 4;
+        const gameKey = "lingMatching1";
+
+        // Check if the record already exists
+        const querySnapshot = await getDocs(
+          query(
+            levelCollectionRef,
+            where("userId", "==", userId),
+            where("gameLevel", "==", gameLevel),
+            where("gameKey", "==", gameKey)
+          )
+        );
+
+        if (querySnapshot.empty) {
+          try {
+            await addDoc(levelCollectionRef, {
+              userId: userId,
+              gameLevel: gameLevel,
+              gameKey: gameKey,
+            });
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+        } else {
+          console.log("Record already exists");
+        }
+      }
     }
   }, [items]);
 
@@ -81,6 +117,7 @@ function MatchingGame4() {
         X
       </Link>
       <h1>Matching Game: Level 4</h1>
+      <BackgroundMusicSelector/>
       {completed ? (
         <div>
           <h2>Congratulations! You completed the game!</h2>

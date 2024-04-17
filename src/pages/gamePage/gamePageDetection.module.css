@@ -1,11 +1,22 @@
 .main__container {
-    max-width: 170rem;
-    height: 100vh;
-    padding: 10rem 20rem;
-    margin: auto;
-    color: #fff;
+  max-width: 170rem;
+  height: 100vh;
+  padding: 10rem 20rem;
+  margin: auto;
+  color: #fff;
+  display: grid;
+  flex-direction: column;
+  align-items: center !important;
+  text-align: center;
   }
 
+  .nav {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
   .header {
     text-align: center;
     padding: 10rem 20rem;
@@ -28,8 +39,6 @@
 
   .buttonlayout {
     display: grid;
-    grid-template-areas: "button1 button2 button3"
-                         "button4 button5 button5";
     grid-gap: 5px;
   }
 
@@ -43,4 +52,3 @@
 p{
   font-size: 20px;
 }
-  

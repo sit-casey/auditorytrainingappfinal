@@ -39,7 +39,6 @@ function LingDiscriminationPageGame2() {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-            // Assuming 'a' is the field for the sample sound in your database
             const audioSampleUrl = docSnap.data()["a"]; // Use the correct field name based on your Firestore structure
             const audio = new Audio(audioSampleUrl);
             audio.play();

@@ -7,9 +7,10 @@ function Popup(props) {
     return (props.trigger) ? (
         //Styling
         <div className="popup">
+            
             <div className="popup-inner">
                 {/* Close button */}
-                <button className="close-btn" onClick={() => props.setTrigger(false)}>close</button>
+                <button className="close-btn" onClick={() => props.setTrigger(false)}>X</button>
                 {/* Display the children of popup when declared */}
                 { props.children }
             </div>

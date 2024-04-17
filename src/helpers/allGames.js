@@ -3,32 +3,39 @@
 const allGames = {
     lingGames: [
       {
-        title: "Coming Soon",
-        link: "/activity/gameActivities/unknown",
-        src: "detection",
+        title: "Audio Memory",
+        link: "/activity/gameActivities/audioMemoryGame",
+        src: "update",
         level: 1,
-        desc:"Work in progress, please implement"
+        desc:"Reproduce the sound pattern"
       },
       {
-        title: "Discrimintion",
+        title: "Matching",
         link: "/activity/gameActivities/matching",
-        src: "discrimination",
+        src: "card-game",
         level: 2,
         desc:"Match the same sounds"
       },
       {
-        title: "Identification",
+        title: "Cross Words",
         link: "/activity/gameActivities/crosswords",
-        src: "identification",
+        src: "loupe",
         level: 3,
         desc:"Find the words with the given sounds"
       },
       {
-        title: "Coming Soon",
-        link: "/activity/gameActivities/unknown",
-        src: "comprehension",
+        title: "Words with Friends",
+        link: "/activity/gameActivities/categoryGame",
+        src: "conversation",
+        level: 6,
+        desc: "Work in progress",
+      },
+      {
+        title: "Bubble Detection",
+        link: "/activity/gameActivities/bubbledetection",
+        src: "clicking",
         level: 4,
-        desc:"Work in progress, please implement"
+        desc: "Listen for a sound, and pop a bubble within 3 seconds",
       },
     ],
   };

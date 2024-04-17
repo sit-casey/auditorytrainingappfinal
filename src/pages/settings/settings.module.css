@@ -1,152 +1,94 @@
-.settings_light {
-  height: 4.5rem;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  top: 10.0rem;
-  width: 100%;
-  font-size: 35px;
-  z-index: -1;
+/* settings.module.css */
+
+/* General settings for alignment and spacing */
+.settings_light, .settings_dark {
+  padding: 60px;
+}
+
+.header__title {
   text-align: center;
-  color: #444;
-}
-.settings_dark {
-  height: 20.0rem;
-  font-weight: 600;
-  margin: 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  font-size: 35px;
-  z-index: -1;
-  text-align: center;
-  padding-top: 100px;
-  color: white !important;
-  background-color: #121212;
-}
-
-.settings_dark h1{
-  color: white;
-}
-
-
-.main_container_light {
-  background-color: white;
-  margin-top: 180px;
-  padding-left: 100px;
-  padding-right: 30px;
-  font-family: Sans-Serif;
-}
-.main_container_dark {
-  background-color: #121212;
-  margin-top: 180px;
-  padding-left: 100px;
-  padding-right: 30px;
-  padding-bottom: 198px;
-  font-family: Sans-Serif;
-}
-
-.text_box_light {
-  width: 35%;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  border: 2px solid rgba(var(--black));
-  height: 5rem;
-  font-size: 1.7rem;
-  margin-top: 2px;
+  margin-top: 5rem;
   margin-bottom: 20px;
-  border-radius: 4rem;
 }
-.text_box_dark {
-  width: 35%;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  border: 1px solid rgba(var(--light-blue));
-  height: 5rem;
-  font-size: 1.7rem;
-  margin-top: 5px;
+
+.main_container_light, .main_container_dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card_body_light, .card_body_dark {
+  width: 100%;
+  max-width: 600px; /* Adjust based on preference */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;  
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
   margin-bottom: 15px;
-  border-radius: 4rem;
-  background-color: #c8c8c8;
 }
 
-.text_box_light[type="password"]{
-  border: 2px solid rgba(var(--black));  
-}
-
-.password_button {
-  background-color: #141467;
-  color: white;
-  padding: 15px 32px;
-  height: 5rem;
-  text-align: center;
-  display: inline-block;
+.form-label h4 {
+  margin: 0;
+  color: #333; /* Adjust based on theme */
   font-size: 18px;
-  width: 33%;
-  border-radius: 0.8rem;
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  font-family: sans-serif;
+}
+
+.form-control {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
 }
 
 .image {
-  /* position: absolute; */
+  cursor: pointer;
   width: 20px;
-  height: 20px;
-  margin-left: 6px;
-  filter: contrast(0.2);
+  margin-top: -6.5rem;
+  margin-left: 95%;
+  position: relative;
 }
 
-.card_body_light {
-  background-color: white;
-  padding: 10px;
-  padding-left: 120px;
-  /* width: 100px; */
-}
-.card_body_dark {
-  background-color: #121212;
-  color: #c0c0c0;
-  padding: 10px;
-  padding-left: 120px;
-  /* width: 100px; */
+.password_button {
+  background-color: #ffffff;
+  color: rgb(49, 49, 49);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
-.switch {
-  margin-bottom: 25px;
-  font-size: 2.1rem;
-  font-family: sans-serif;
-  font-style: italic;
+.password_button:hover {
+  background-color: #ffffff;
 }
 
-.theme_label {
-  margin-right: 20px;
-  
+.logobutton img {
+  width: 150px; /* Adjust based on preference */
+  margin-top: 20px;
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
+/* Adjusting for theme differences */
+.settings_dark, .card_body_dark, .form-label h4 {
+  background-color: #2c3e50; /* Dark theme background */
+  color: #ecf0f1; /* Light text for dark background */
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+  .card_body_light, .card_body_dark {
+    padding: 15px;
   }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 
-.logobutton{
-  text-align: center;
- /* padding: 25rem 3rem 2rem 3rem;*/
-  width: 50%;
-  align-items: end;
-  margin: 300px 60px 0px auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  animation: bounce 2s infinite;
+  .image {
+    margin-left: 90%;
+  }
 }
 

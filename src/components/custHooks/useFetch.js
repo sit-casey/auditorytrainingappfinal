@@ -15,6 +15,7 @@ const useFetch = (...requests) => {
   const user = useContext(AuthContext).fbUser;
 
   useEffect(() => {
+    console.log(user);
     const getData = async function () {
       setIsPending(true);
       const docRef = doc(db, user);
@@ -30,7 +31,7 @@ const useFetch = (...requests) => {
 
     getData();
     console.log("FETCH DATA",arr);
-  }, []);
+  }, [user]);
 
   return [FBDoc, isPending, err];
 };
