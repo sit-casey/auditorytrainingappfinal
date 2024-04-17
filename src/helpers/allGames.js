@@ -24,11 +24,18 @@ const allGames = {
         desc:"Find the words with the given sounds"
       },
       {
-        title: "Coming Soon",
-        link: "/activity/gameActivities/unknown",
-        src: "gamer-girl",
+        title: "Words with Friends",
+        link: "/activity/gameActivities/categoryGame",
+        src: "conversation",
+        level: 6,
+        desc: "Work in progress",
+      },
+      {
+        title: "Bubble Detection",
+        link: "/activity/gameActivities/bubbledetection",
+        src: "clicking",
         level: 4,
-        desc:"Work in progress, please implement"
+        desc: "Listen for a sound, and pop a bubble within 3 seconds",
       },
     ],
   };

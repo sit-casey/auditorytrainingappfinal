@@ -2,58 +2,66 @@ import React, { useState, useEffect } from 'react';
 import classes from './quizGame.module.css';
 import { Link } from 'react-router-dom';
 import NavProfile from "../nav/Nav";
+import BackgroundMusicSelector from "../backgroundMusic/backgroundMusic";
 
 
 
 const questions = [
   {
-    question: 'What color is the sky?',
-    options: ['Red', 'Yellow', 'Blue', 'Green'],
-    answer: 'Blue',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%202%2FWhat%20color%20is%20the%20sky%202.wav?alt=media&token=ec054409-b261-4481-9d09-1cba41cd39de',
+    question: "What color is the sky?",
+    options: ["Red", "Yellow", "Blue", "Green"],
+    answer: "Blue",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20cbajv13sg5.mp3?alt=media&token=ecacda7f-1290-48e2-85ea-cf15dc19b92f",
   },
   {
-    question: 'How many legs does a dog have?',
-    options: ['One', 'Two', 'Five', 'Four'],
-    answer: 'Four',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%202%2FHow%20many%20legs%20does%20a%20dog%201.wav?alt=media&token=642125d8-7500-43be-8850-dc5c1ff66d76',
-  },
-
-  {
-    question: 'What sound does the cat say?',
-    options: ['Baa', 'Moo', 'Meow', 'Squeak'],
-    answer: 'Meow',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%202%2FWhat%20sound%20does%20the%20cat%201.wav?alt=media&token=9454fe9d-67ac-49fa-817a-1b099ac14af1',
+    question: "How many legs does a dog have?",
+    options: ["One", "Two", "Three", "Four"],
+    answer: "Four",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20he4gnb0s6u.mp3?alt=media&token=2ef9f0bd-798b-4391-bcee-fd836762a470",
   },
   {
-    question: 'Who gives us milk?',
-    options: ['A cow', 'A dog', 'A moose', 'A snake'],
-    answer: 'A cow',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%202%2FWho%20gives%20us%20milk%201.wav?alt=media&token=0c324a59-83a1-47fe-b5a6-a4df880da0e1',
+    question: "What sound does the cat make?",
+    options: ["Baa", "Meow", "Moo", "Squeak"],
+    answer: "Meow",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20nle3iwx9bm.mp3?alt=media&token=1e6381a5-ef9d-49af-b82f-f2f6863cbc67",
   },
   {
-    question: 'What do monkeys eat',
-    options: ['Carrots', 'Bananas', 'Potatos', 'Peanuts'],
-    answer: 'Bananas',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%202%2FWhat%20do%20monkeys%20eat%201.wav?alt=media&token=266890ce-10ca-4e47-b5e3-13d53a6b29f4',
+    question: "Who gives us milk?",
+    options: ["A cow", "A dog", "A mouse", "A snake"],
+    answer: "A cow",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2F158e2178-ffb7-4516-b15b-35cb7ced88a9.m4a?alt=media&token=d1fdf755-71d3-42a1-8f7e-fa05eb432f38",
   },
   {
-    question: 'Where do you go when you feel sick?',
-    options: ['The Mechanic', 'The Gym', 'The Dentist', 'The Doctor'],
-    answer: 'The Doctor',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%202%2FWhere%20do%20you%20go%20when%20you%201.wav?alt=media&token=d7fc810e-2dcc-426b-b059-91b21730dcf6',
+    question: "What do monkeys eat?",
+    options: ["Peanuts", "Bananas", "Potatoes", "Tomatoes"],
+    answer: "Bananas",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%2068d1ow47zf.mp3?alt=media&token=50564c70-e5cc-44e8-8665-1336afb47c09",
   },
   {
-    question: 'What does a red light mean?',
-    options: ['Stop', 'Go', 'Slow Down', 'Yeild'],
-    answer: 'Stop',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%202%2FWhat%20does%20a%20red%20light%20me%202.wav?alt=media&token=504af6cb-7efe-4415-ac11-0ded051ed872',
+    question: "Where do you go when you feel sick?",
+    options: ["To school", "To the gym", "To the doctor", "To the dentist"],
+    answer: "To the doctor",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20ls9uirovhz.mp3?alt=media&token=096b099d-ef35-44e1-bb98-d13d66fbfa0c",
   },
   {
-    question: 'What do you wear on your feet?',
-    options: ['Shirt', 'Shoes', 'Pants', 'Hat'],
-    answer: 'Shoes',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%202%2FWhat%20do%20you%20wear%20on%20your%201.wav?alt=media&token=ac89040d-4c94-47d4-814c-ab1a36eaebf2',
+    question: "What does a red light mean?",
+    options: ["Go", "Stop", "Slow down", "Yield"],
+    answer: "Stop",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20x5einbm14w.mp3?alt=media&token=fcb61d6a-83c8-43cf-beba-9527952e45a1",
+  },
+  {
+    question: "What do you wear on your feet?",
+    options: ["Shirt", "Pants", "Hat", "Shoes"],
+    answer: "Shoes",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20anfpxb2j63.mp3?alt=media&token=60cd9e8a-614e-49e1-86d0-46747af8f5d8",
   },
   
 ];
@@ -112,7 +120,7 @@ function QuizGame() {
     <>
       <NavProfile />
       <div className={classes.gameContainer}>
-   
+      <BackgroundMusicSelector />
         <div className={classes.title}>Listen Carefully</div>
          {/* Display the score */}
       <div className={classes.scoreContainer}>

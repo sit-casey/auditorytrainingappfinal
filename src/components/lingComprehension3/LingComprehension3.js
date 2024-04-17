@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import classes from './quizGame.module.css';
 import { Link } from 'react-router-dom';
 import NavProfile from "../nav/Nav";
+import BackgroundMusicSelector from "../backgroundMusic/backgroundMusic";
 
 
 
 const sentences = [
   {
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%203%2FToday%20is%20my%20birthday%20and%203.wav?alt=media&token=6b910001-8e06-40c4-8135-9d2be7f70112',
+    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20wsg460jia5.mp3?alt=media&token=ddc9567e-c2b9-4895-8a2a-3924950c2b20"',
     questions: [
       {
         question: 'Where did they go?',
@@ -32,7 +33,7 @@ const sentences = [
     ],
   },
   {
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%203%2FAmanda%20has%20soccer%20practic%202.wav?alt=media&token=33888cf7-655b-4112-921a-c0186fd915d5',
+    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20d1sf64pe2q.mp3?alt=media&token=dfe71679-8090-497c-becb-125dcb101351',
     questions: [
       {
         question: 'What sport does Amanda play?',
@@ -57,7 +58,7 @@ const sentences = [
     ],
   },
   {
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%203%2FI%20need%20to%20change%20my%20appoi%202.wav?alt=media&token=52e53c26-c00c-4688-a04e-c81555f75593',
+    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20de1qp04ath.mp3?alt=media&token=f8d6b6d6-d428-41cf-afd2-7f97f156fa0f',
     questions: [
       {
         question: 'What do I need to do?',
@@ -77,7 +78,7 @@ const sentences = [
     ],
   },
   {
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%203%2FI%20have%20two%20dogs%20named%20Nol%201.wav?alt=media&token=887ea049-2666-490a-bb54-151dcfd02473',
+    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20xphkjyq5nr.mp3?alt=media&token=9ae43017-caf4-4c46-b50a-dc40e67a0b83',
     questions: [
       {
         question: 'How many dogs do they have?',
@@ -146,6 +147,8 @@ function QuizGame() {
     <>
       <NavProfile />
       <div className={classes.gameContainer}>
+      <BackgroundMusicSelector />
+
         <div className={classes.title}>Listen Carefully</div>
         <div className={classes.scoreContainer}>
           Score: {score} / {sentences.reduce((acc, sentence) => acc + sentence.questions.length, 0)}

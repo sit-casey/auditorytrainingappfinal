@@ -109,7 +109,7 @@ npm install
 
 It is necessary to create a firebase-config.js file. This should be placed in the src folder. To find the firebase key that should be contained in that file, please refer to the following website: https://support.google.com/firebase/answer/7015592#web&zippy=%2Cin-this-article 
 
-Please be advised that you will have to include an export statement including db, auth, app, analytics, and storage.
+Please be advised that you will have to include an export question including db, auth, app, analytics, and storage.
 
 The app can now be started on your local machine by running:
 

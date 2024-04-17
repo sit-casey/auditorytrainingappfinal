@@ -2,76 +2,86 @@ import React, { useState, useEffect } from 'react';
 import classes from './quizGame.module.css';
 import { Link } from 'react-router-dom';
 import NavProfile from "../../components/nav/Nav";
-
+import BackgroundMusicSelector from "../backgroundMusic/backgroundMusic";
 
 
 const questions = [
   {
-    question: 'What day is it?',
-    options: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-    answer: 'Monday',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FToday%20is%20Monday%201.wav?alt=media&token=aa9af13c-e0cf-45f1-964b-91aa5717d3b6',
+    question: "What day is it?",
+    options: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+    answer: "Monday",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20z5e6slw3fx.mp3?alt=media&token=30d5feed-3c34-455c-8e5d-176c4b932581",
   },
   {
-    question: 'What does Ali love?',
-    options: ['Cookies', 'Icecream', 'Cake', 'Candy'],
-    answer: 'Icecream',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FAli%20loves%20icecream%201.wav?alt=media&token=201b151d-4c51-4a0f-b180-c67f5fe7afb8',
-  },
-
-  {
-    question: 'What is the dog\'s name?',
-    options: ['Twinkie', 'Rover', 'Max', 'Kevin'],
-    answer: 'Rover',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FThe%20dog-s%20name%20is%20Rover%201.wav?alt=media&token=20c86b08-5846-4767-928a-378ad4882d2c',
+    question: "What does Ali love?",
+    options: ["Cookies", "Icecream", "Cake", "Candy"],
+    answer: "Icecream",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20g539jltab0.mp3?alt=media&token=99677df4-3b52-4581-a74e-5f9f993bf20e",
   },
   {
-    question: 'What did Melissa pack?',
-    options: ['Clothes', 'Toys', 'Lunch', 'Papper'],
-    answer: 'Lunch',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FMarissa%20packed%20lunch%20for%201.wav?alt=media&token=a4d77dab-4c3b-4c9a-86bf-9865eb4f63ec',
+    question: "What's the dog's name?",
+    options: ["Twinkie", "Rover", "Max", "Kevin"],
+    answer: "Rover",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%203uvcjdeyg6.mp3?alt=media&token=1690b82d-45dc-4b85-96a5-d150811e57cf",
   },
   {
-    question: 'What is her favorite season?',
-    options: ['Spring', 'Summer', 'Fall', 'Winter'],
-    answer: 'Fall',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FFall%20is%20her%20favorite%20seas%201.wav?alt=media&token=e89b7e17-ee35-4715-8176-912ed7fcac75',
+    question: "What did Marissa pack?",
+    options: ["Clothes", "Toys", "Lunch", "Paper"],
+    answer: "Lunch",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20ic6efh12rv.mp3?alt=media&token=ec5c69cb-3032-485c-bb3e-dcff9a10075c",
   },
   {
-    question: 'How are they traveling?',
-    options: ['By Car', 'By Train', 'By Airplane', 'By Boat'],
-    answer: 'By Train',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FWe%20are%20traveling%20by%20train%201.wav?alt=media&token=815e38f7-c15f-4787-91a3-78f615fa41e8',
+    question: "What is her favorite season?",
+    options: ["Spring", "Summer", "Winter", "Fall"],
+    answer: "Fall",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2F28c837a3-6858-4c8c-a0ab-c67dc2767b8c.m4a?alt=media&token=94633d8a-ed2c-4977-9f81-3a71680f1f21",
   },
   {
-    question: 'How many brothers does Paul have?',
-    options: ['One', 'Two', 'Three', 'None'],
-    answer: 'Two',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FPaul%20has%20two%20brothers%201.wav?alt=media&token=98c98fc5-3eaa-40d3-a544-6125898fa86e',
+    question: "How are they traveling?",
+    options: ["By car", "By train", "By airplane", "By boat"],
+    answer: "By train",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20yxv4qkobrh.mp3?alt=media&token=e200128e-9530-4765-a98b-7ac3ddf5fc1e",
   },
   {
-    question: 'What kind of movies Olivia watch?',
-    options: ['Funny', 'Drama', 'Scary', 'Romantic'],
-    answer: 'Scary',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FOlivia%20watches%20scary%20movi%201.wav?alt=media&token=bb730273-2a22-4dee-8d98-3bca25c69fb5',
+    question: "How many brothers does Paul have?",
+    options: ["One", "Two", "Three", "None"],
+    answer: "Two",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20p29i8ts7rj.mp3?alt=media&token=c5f7265a-f0a7-4ce6-b4ac-da71c242f8fd",
   },
   {
-    question: 'What does the dog have?',
-    options: ['A long tail', 'A short tail', 'A long nose', 'A big nose'],
-    answer: 'A long tail',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FThe%20dog%20has%20a%20long%20tail%201.wav?alt=media&token=2f867ba1-247d-486c-8980-39970259f85e',
+    question: "What kind of movies does Olivia watch?",
+    options: ["Funny", "Serious", "Scary", "Romantic"],
+    answer: "Scary",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20vk5o08ni2u.mp3?alt=media&token=e225ef5b-f449-4918-9a35-489ff19bb9c7",
   },
   {
-    question: 'What color is the bear\'s bowtie',
-    options: ['Red', 'Blue', 'Orange', 'Pink'],
-    answer: 'Blue',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FThe%20bear%20has%20a%20blue%20bow-t%201.wav?alt=media&token=de64898f-8ba3-4fee-8131-323e18a0d907',
+    question: "What does the dog have?",
+    options: ["A long tail", "A short tail", "A long nose", "A big nose"],
+    answer: "A long tail",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%20in1d8pxo4z.mp3?alt=media&token=912f814b-1493-47cb-93e5-643375749fce",
   },
   {
-    question: 'What type of socks does the man have',
-    options: ['Silly', 'Goofy', 'Funky', 'Ugly'],
-    answer: 'Funky',
-    audio: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FComprehension%2FLevel%201%2FThe%20man%20has%20funky%20socks%201.wav?alt=media&token=13bcbe0f-5300-438f-b33d-4af532c5f019',
+    question: "What color is the bear's bowtie?",
+    options: ["Red", "Orange", "Pink", "Blue"],
+    answer: "Blue",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%209uiw27fqy6.mp3?alt=media&token=f5134228-ca78-4fdc-ba96-638ab35cc6e6",
+  },
+  {
+    question: "What type of socks does the man have?",
+    options: ["Silly", "Goofy", "Funky", "Ugly"],
+    answer: "Funky",
+    audio:
+      "https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2Fcomprehensiongame%2FConverted%20by%20VirtualSpeech%20-%205ytobfzn2x.mp3?alt=media&token=62595f85-e9cf-4e2b-a42d-f6f9bc59e0e2",
   },
   
   
@@ -128,7 +138,10 @@ function QuizGame() {
   return (
     <>
   <NavProfile />
+
     <div className={classes.gameContainer}>
+    <BackgroundMusicSelector />
+
       <div className={classes.title}>Listen Carefully
       {gameState !== 'idle' && (
          <div className={classes.scoreContainer}>

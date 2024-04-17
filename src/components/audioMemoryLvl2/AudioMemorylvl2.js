@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import classes from '../audioMemory/audioMemoryGame.module.css'; 
 import { Link } from 'react-router-dom'; 
 import NavProfile from "../../components/nav/Nav";
+import BackgroundMusicSelector from "../backgroundMusic/backgroundMusic";
+
  
 const words = [
   { word: 'God', sound: 'https://firebasestorage.googleapis.com/v0/b/auditorytrainingapp.appspot.com/o/audio%2FAudio%20Memory%2FGod%201.wav?alt=media&token=721d0683-ab1a-49ce-bac7-00f94e5881bf' },
@@ -140,6 +142,8 @@ return (
   <>
   <NavProfile />
   <div className={classes.gameContainer}>
+  <BackgroundMusicSelector />
+
   <div className={classes.title}>Repeat The Pattern</div>
 
   {/* Display the score */}

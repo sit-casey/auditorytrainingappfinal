@@ -6,7 +6,7 @@ const allComprehensionGames = {
         title: "Level 1",
         link: "/lingActivity/comprehensionLvl1",
         src: "number-1-green",
-        desc: "Listen closely to the statement, then visually match the answer to the question."
+        desc: "Listen closely to the question, then visually match the answer to the question."
       },
       {
         title: "Level 2",

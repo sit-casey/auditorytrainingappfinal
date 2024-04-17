@@ -6,14 +6,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 45rem;
+  max-height: 600px;
   height: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
   background: rgba(255, 255, 255, 0.171);
   backdrop-filter: blur(15px);
   padding: 2rem 0 2rem 1.5rem;
   box-sizing: border-box;
+  overflow-x: hidden;
   overflow: scroll !important;
   border-radius: 20px;
+
 }
 .form__switcher {
   margin: 2rem 0;

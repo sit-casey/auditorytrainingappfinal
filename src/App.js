@@ -48,6 +48,9 @@ import AudioMemory from "./components/audioMemory/AudioMemory";
 import AudioMemoryLvl2 from "./components/audioMemoryLvl2/AudioMemorylvl2";
 import AudioMemoryLvl3 from "./components/audioMemoryLvl3/AudioMemorylvl3";
 import AudioMemoryLvl4 from "./components/audioMemoryLvl4/AudioMemorylvl4";
+import CategoryGame from "./components/WordsWithFriends/CategoryGame";
+import BubbleDetection from "./pages/gamePage/BubbleDetection";
+
 
 export const ThemeContext = createContext(null);
 
@@ -428,6 +431,26 @@ function App() {
                                     <DetectionForum />
                                 ) : (
                                     <Navigate to="/auth" />
+                                )
+                            }
+                        />
+                        <Route
+                            path="/activity/gameActivities/bubbledetection"
+                            element={
+                                authContext.isLoggedIn ? (
+                                <BubbleDetection />
+                                ) : (
+                                <Navigate to="/auth" />
+                                )
+                            }
+                        />
+                        <Route
+                            path="/activity/gameActivities/categoryGame"
+                            element={
+                                authContext.isLoggedIn ? (
+                                <CategoryGame />
+                                ) : (
+                                <Navigate to="/auth" />
                                 )
                             }
                         />

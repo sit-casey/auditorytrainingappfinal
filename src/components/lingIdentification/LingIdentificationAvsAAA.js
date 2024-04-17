@@ -6,6 +6,7 @@ import useFetch from "../custHooks/useFetch";
 import Progress from "../progressBar/Progress";
 import PlayButton from "../playButton/PlayButton";
 import Completed from "../Completed/Completed";
+import BackgroundMusicSelector from "../backgroundMusic/backgroundMusic";
 
 import classes from "./lingIdentification.module.css";
 
@@ -189,6 +190,8 @@ function LingIdentificationAvsAAA(props) {
       {/* Game unfinished - Sound shuffled - begin game */}
       {!soundS && (
         <div className={classes.bg__container}>
+            <BackgroundMusicSelector />
+
           <section className={classes.activity}>
             {/* Progress Bar */}
             <Progress refSetter={refSetter} />

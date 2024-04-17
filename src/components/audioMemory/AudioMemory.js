@@ -1,9 +1,8 @@
-
-//----------
 import React, { useState, useEffect } from 'react';
 import classes from './audioMemoryGame.module.css'; 
 import { Link } from 'react-router-dom'; 
 import NavProfile from "../../components/nav/Nav";
+import BackgroundMusicSelector from "../backgroundMusic/backgroundMusic";
 
 
 // Original words array
@@ -143,6 +142,8 @@ return (
   <>
       <NavProfile />
       <div className={classes.gameContainer}>
+      <BackgroundMusicSelector />
+
       <div className={classes.title}>Repeat The Pattern</div>
 
       {/* Display the score */}
