@@ -2,7 +2,7 @@
 
 Authors:
 
-Capstone 2: Nicole Cruz, Ashley Enalien, Rafael Mejia Galvan, Hubert Cabrera, Enrique Portela 
+Capstone 2: Nicole Cruz, Ashley Enalien, Rafael Mejia Galvan, Hubert Cabrera, Enrique Portela, Jose Ibarra, Caroline Quiroga, Nathaniel Gonzales, David Martinez.
 
 Product Owner: Alliete Alfano
 
