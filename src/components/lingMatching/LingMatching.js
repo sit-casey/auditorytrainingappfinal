@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
+import BackgroundMusicSelector from "../backgroundMusic/backgroundMusic"; // Importing a custom component for background music
+import { db } from "../../firebase-config"; // Importing Firebase configuration
+import { collection, getDocs, query, where } from "firebase/firestore"; // Importing Firestore functions
+import { addDoc } from "firebase/firestore"; // Importing addDoc function for Firestore
+import { useAuth } from "../../../src/components/store/auth-context"; // Importing custom auth context hook
+
 
 function MatchingGame() {
-  const [items, setItems] = useState([]);
-  const [selected, setSelected] = useState([]);
-  const [completed, setCompleted] = useState(false);
+  const [items, setItems] = useState([]); // State for game items
+  const [selected, setSelected] = useState([]); // State for selected items
+  const [completed, setCompleted] = useState(false); // State to track game completion
+  const [volume, setVolume] = useState(0.5); // State for audio volume
+  const [isLevelStored, setIsLevelStored] = useState(false); // State to check if game level is stored
+
+
 
   // Change these sounds to whatever you want
   const sounds = [
@@ -74,6 +84,46 @@ function MatchingGame() {
       setCompleted(true);
     }
   }, [items]);
+  
+  useEffect(async () => {
+    console.log(localStorage.getItem("user"));
+    const completedPairs = items.filter((item) => item.matched).length / 2;
+    if (completedPairs === 3) {
+      setCompleted(true);
+      if (isLevelStored === false) {
+        setIsLevelStored(true);
+        const levelCollectionRef = collection(db, "levels");
+        const userId = localStorage.getItem("user");
+        const gameLevel = 1;
+        const gameKey = "lingMatching1";
+
+        // Check if the record already exists
+        const querySnapshot = await getDocs(
+          query(
+            levelCollectionRef,
+            where("userId", "==", userId),
+            where("gameLevel", "==", gameLevel),
+            where("gameKey", "==", gameKey)
+          )
+        );
+
+        // If record doesn't exist, add it to Firestore
+        if (querySnapshot.empty) {
+          try {
+            await addDoc(levelCollectionRef, {
+              userId: userId,
+              gameLevel: gameLevel,
+              gameKey: gameKey,
+            });
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+        } else {
+          console.log("Record already exists");
+        }
+      }
+    }
+  }, [items]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
@@ -81,6 +131,8 @@ function MatchingGame() {
         X
       </Link>
       <h1>Matching Game: Level 1</h1>
+      <BackgroundMusicSelector />
+
       {completed ? (
         <div>
           <h2>Congratulations! You completed the game!</h2>

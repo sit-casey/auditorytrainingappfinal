@@ -24,6 +24,7 @@ function GameOptions(props) {
             </div>
 
             <div className={classes.display}>
+                
                 {/* Display game options within cards - changing game options requires going to associated handler */}
                 {props.optionsArr.map((card, i) => (
                     <div className={classes.flex_item}>

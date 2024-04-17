@@ -3,6 +3,7 @@
     display: grid;
     flex-direction: row;
     color: rgb(0, 0, 0);
+    width: 100%;
 
   }
   
@@ -40,8 +41,17 @@
   
   .display{
     display: inline-flex;
-    gap: 50px
+    overflow-y: hidden;
   }
-
- 
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 4px;
+    height: 1rem;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: rgba(49, 49, 49, 0.427);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
   
