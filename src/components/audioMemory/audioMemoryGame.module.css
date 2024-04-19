@@ -130,8 +130,7 @@ button:disabled {
   width: 100%;
 }
 .wordsContainer {
-  margin-top: 0px !important;
-  margin-left: 25px;
+  margin-top: 10rem !important;
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Creates five columns */
   grid-template-rows: repeat(2, 1fr); /* Creates two rows */
