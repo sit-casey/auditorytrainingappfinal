@@ -141,11 +141,12 @@ useEffect(() => {
 return (
   <>
       <NavProfile />
+      
+
       <div className={classes.gameContainer}>
-      <BackgroundMusicSelector />
 
       <div className={classes.title}>Repeat The Pattern</div>
-
+      <BackgroundMusicSelector />
       {/* Display the score */}
       <div className={classes.scoreContainer}>
         Score: {score}

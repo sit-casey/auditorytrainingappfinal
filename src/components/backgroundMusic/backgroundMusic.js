@@ -117,7 +117,8 @@ function BackgroundMusicSelector() {
         top: "10px",
         right: "10px",
         bottom: "10px",
-        zIndex: "9999",
+        maxHeight: "60px",
+        zIndex: "50",
       }}
     >
       <button
